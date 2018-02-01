@@ -14,7 +14,7 @@ struct DSConfig {
     // MARK: - <color>
 
     static var barTintColor: UIColor {
-        get {return UIColor.rgbColor(r: 73, g: 156, b: 99)}
+        get {return UIColor.rgbColor(r: 51, g: 144, b: 247)}
     }
     static var tabbarTextColor: UIColor {
         get {return UIColor.rgbColor(r: 26.0, g: 26.0, b: 26.0)}
@@ -23,7 +23,7 @@ struct DSConfig {
         get {return DSConfig.barTintColor}
     }
     static var viewBackgroundColor: UIColor {
-        get {return UIColor.hexColor(hex: 0xE7EBEE)}
+        get {return UIColor.rgbColor(r: 244, g: 245, b: 247)}
     }
     // MARK: - <font>
 

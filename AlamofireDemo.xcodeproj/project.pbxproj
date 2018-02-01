@@ -31,6 +31,7 @@
 		69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BEF2022B9D200BE5F67 /* DSHomeController.swift */; };
 		69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */; };
 		69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF42022BC9A00BE5F67 /* DSProfileController.swift */; };
+		69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF72022E68B00BE5F67 /* DSButton.swift */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		69996BF12022BA6000BE5F67 /* UINavigationController+FullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FullscreenPopGesture.h"; sourceTree = "<group>"; };
 		69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FullscreenPopGesture.m"; sourceTree = "<group>"; };
 		69996BF42022BC9A00BE5F67 /* DSProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSProfileController.swift; sourceTree = "<group>"; };
+		69996BF72022E68B00BE5F67 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,9 +249,18 @@
 		69996BEE2022B91000BE5F67 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				69996BF62022E66200BE5F67 /* View */,
 				69996BF42022BC9A00BE5F67 /* DSProfileController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		69996BF62022E66200BE5F67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69996BF72022E68B00BE5F67 /* DSButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -591,6 +602,7 @@
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
 				69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */,
+				69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,10 +19,10 @@ class DSNavigationController: UINavigationController {
 //    override var prefersStatusBarHidden: Bool{
 //        return (viewControllers.last?.prefersStatusBarHidden)!
 //    }
-//    override var preferredStatusBarStyle: UIStatusBarStyle{
-//        return viewControllers.last?.preferredStatusBarStyle ?? .lightContent
-//    }
-//    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return  .lightContent
+    }
+//
 //    override var shouldAutorotate: Bool{
 //        return (viewControllers.last?.shouldAutorotate)!
 //    }
@@ -54,10 +54,10 @@ class DSNavigationController: UINavigationController {
 
 extension DSNavigationController{
     fileprivate func setnavigationBar() -> Void {
-        self.navigationBar.barTintColor = DSConfig.barTintColor // title
-        self.navigationBar.tintColor = UIColor.white // backprint(__FUNCTION__)
+        self.navigationBar.barTintColor = DSConfig.barTintColor // bg
+        self.navigationBar.tintColor = UIColor.white // back
         
-        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font : DSConfig.navigationBarTitleFont,NSAttributedStringKey.foregroundColor: UIColor.red];
+        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font : DSConfig.navigationBarTitleFont,NSAttributedStringKey.foregroundColor: UIColor.white];
     }
     fileprivate func backleftBarButtonItem()->UIBarButtonItem{
         

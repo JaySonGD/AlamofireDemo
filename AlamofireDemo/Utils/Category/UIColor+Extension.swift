@@ -23,6 +23,20 @@ extension UIColor{
         return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1.0)
     }
     
+    var image : UIImage{
+        get{
+            let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+            UIGraphicsBeginImageContext(rect.size)
+            let context = UIGraphicsGetCurrentContext()
+            context?.setFillColor(self.cgColor)
+            context?.fill(rect)
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return newImage!;
+        }
+    }
+    
+    
 
 }
 
