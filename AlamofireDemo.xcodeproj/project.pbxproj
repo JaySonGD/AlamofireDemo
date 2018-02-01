@@ -25,6 +25,9 @@
 		69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BD6202044E900BE5F67 /* DSConfig.swift */; };
 		69996BD92020460B00BE5F67 /* DSConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BD82020460B00BE5F67 /* DSConst.swift */; };
 		69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BDC2020585E00BE5F67 /* DSHttpManager.swift */; };
+		69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */; };
+		69996BE1202074AD00BE5F67 /* DSPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BE0202074AD00BE5F67 /* DSPlayerController.swift */; };
+		69996BE82021761800BE5F67 /* UITabBar+CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996BE62021761800BE5F67 /* UITabBar+CustomBadge.m */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,11 @@
 		69996BD6202044E900BE5F67 /* DSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSConfig.swift; sourceTree = "<group>"; };
 		69996BD82020460B00BE5F67 /* DSConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSConst.swift; sourceTree = "<group>"; };
 		69996BDC2020585E00BE5F67 /* DSHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHttpManager.swift; sourceTree = "<group>"; };
+		69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPlayViewController.swift; sourceTree = "<group>"; };
+		69996BE0202074AD00BE5F67 /* DSPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPlayerController.swift; sourceTree = "<group>"; };
+		69996BE52021761700BE5F67 /* AlamofireDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlamofireDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		69996BE62021761800BE5F67 /* UITabBar+CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CustomBadge.m"; sourceTree = "<group>"; };
+		69996BE72021761800BE5F67 /* UITabBar+CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CustomBadge.h"; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,9 +143,12 @@
 		69996B9620200BEC00BE5F67 /* AlamofireDemo */ = {
 			isa = PBXGroup;
 			children = (
-				69996BC720201FA000BE5F67 /* Main */,
-				69996B9720200BEC00BE5F67 /* AppDelegate.swift */,
+				69996BED2022B65300BE5F67 /* AppDelegate */,
+				69996BEA2022B59D00BE5F67 /* Utils */,
+				69996BE92022B56F00BE5F67 /* Modules */,
+				69996BC720201FA000BE5F67 /* Base */,
 				69996B9920200BEC00BE5F67 /* ViewController.swift */,
+				69996BE52021761700BE5F67 /* AlamofireDemo-Bridging-Header.h */,
 				69996B9B20200BEC00BE5F67 /* Main.storyboard */,
 				69996B9E20200BEC00BE5F67 /* Assets.xcassets */,
 				69996BA020200BED00BE5F67 /* LaunchScreen.storyboard */,
@@ -164,20 +175,62 @@
 			path = AlamofireDemoUITests;
 			sourceTree = "<group>";
 		};
-		69996BC720201FA000BE5F67 /* Main */ = {
+		69996BC720201FA000BE5F67 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				69996BCA20201FE700BE5F67 /* DSBaseController.swift */,
 				69996BCC2020200500BE5F67 /* DSNavigationController.swift */,
 				69996BCE2020204300BE5F67 /* DSTabBarController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		69996BE92022B56F00BE5F67 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				69996BEC2022B62A00BE5F67 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		69996BEA2022B59D00BE5F67 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				69996BD82020460B00BE5F67 /* DSConst.swift */,
+				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
+				69996BD6202044E900BE5F67 /* DSConfig.swift */,
+				69996BEB2022B5D000BE5F67 /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		69996BEB2022B5D000BE5F67 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				69996BE72021761800BE5F67 /* UITabBar+CustomBadge.h */,
+				69996BE62021761800BE5F67 /* UITabBar+CustomBadge.m */,
 				69996BD02020348F00BE5F67 /* UIColor+Extension.swift */,
 				69996BD22020365B00BE5F67 /* UIView+Extension.swift */,
 				69996BD42020404100BE5F67 /* UIFont+Extension.swift */,
-				69996BD6202044E900BE5F67 /* DSConfig.swift */,
-				69996BD82020460B00BE5F67 /* DSConst.swift */,
-				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
 			);
-			path = Main;
+			path = Category;
+			sourceTree = "<group>";
+		};
+		69996BEC2022B62A00BE5F67 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */,
+				69996BE0202074AD00BE5F67 /* DSPlayerController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		69996BED2022B65300BE5F67 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				69996B9720200BEC00BE5F67 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -282,6 +335,7 @@
 				TargetAttributes = {
 					69996B9320200BEC00BE5F67 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					69996BA720200BED00BE5F67 = {
@@ -382,11 +436,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
+				69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
 				69996BCD2020200500BE5F67 /* DSNavigationController.swift in Sources */,
@@ -508,6 +565,8 @@
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
+				69996BE1202074AD00BE5F67 /* DSPlayerController.swift in Sources */,
+				69996BE82021761800BE5F67 /* UITabBar+CustomBadge.m in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
@@ -677,11 +736,14 @@
 			baseConfigurationReference = BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AlamofireDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlamofireDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlamofireDemo/AlamofireDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -692,11 +754,13 @@
 			baseConfigurationReference = D6A8A1822DA49079422A59FC /* Pods-AlamofireDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AlamofireDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlamofireDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlamofireDemo/AlamofireDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
