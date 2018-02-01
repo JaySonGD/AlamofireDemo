@@ -17,7 +17,7 @@ public enum DSHTTPMethod: String {
 
 class DSHttpManager: NSObject {
 
-    static let shareManager = DSHttpManager()
+    static let share = DSHttpManager()
     fileprivate override init() {}
 
     
@@ -38,10 +38,14 @@ class DSHttpManager: NSObject {
                  success:@escaping (_ obj:Any)->(),
                  failure:@escaping (_ error:Error)->()){
 
-        var httpType = HTTPMethod.get
-        if method == DSHTTPMethod.post {
-            httpType = HTTPMethod.post
-        }
+//        var httpType = HTTPMethod.get
+//        if method == DSHTTPMethod.post {
+//            httpType = HTTPMethod.post
+//        }
+        
+        let httpType = (method == DSHTTPMethod.get) ? HTTPMethod.get : HTTPMethod.post
+        
+        
         sessionManager.request(url, method: httpType, parameters: parameters).responseJSON { (response) in
             
             guard response.result.isSuccess else {

@@ -14,12 +14,12 @@ class DSHomeController: DSBaseController {
         let btn = UIButton(type: .custom)
         btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         btn.setImage(#imageLiteral(resourceName: "back"), for: .highlighted)
-
-//        btn.backgroundColor = UIColor.randomColor
         btn.size = CGSize(width: 22, height: 44)
         btn.addTarget(self, action: #selector(DSHomeController.profileClick), for: .touchUpInside)
         return UIBarButtonItem(customView: btn)
     }()
+    
+    lazy var viewModel = DSMovieViewModel()
     
     
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class DSHomeController: DSBaseController {
 
         // Do any additional setup after loading the view.
         setUI()
+        loadHomeData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +35,16 @@ class DSHomeController: DSBaseController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension DSHomeController{
+    fileprivate func loadHomeData(){
+        viewModel.loadHomeData(success: { [weak self] in
+            
+        }) { (msg) in
+            
+        }
+    }
 }
 
 extension DSHomeController{

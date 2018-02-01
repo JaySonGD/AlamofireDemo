@@ -32,6 +32,10 @@
 		69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */; };
 		69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF42022BC9A00BE5F67 /* DSProfileController.swift */; };
 		69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF72022E68B00BE5F67 /* DSButton.swift */; };
+		69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */; };
+		69996BFE2023136900BE5F67 /* DSMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFD2023136900BE5F67 /* DSMovieModel.swift */; };
+		69996C00202313AB00BE5F67 /* DSHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFF202313AB00BE5F67 /* DSHomeModel.swift */; };
+		69996C022023188C00BE5F67 /* DSDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996C012023188C00BE5F67 /* DSDataModel.swift */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +94,10 @@
 		69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FullscreenPopGesture.m"; sourceTree = "<group>"; };
 		69996BF42022BC9A00BE5F67 /* DSProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSProfileController.swift; sourceTree = "<group>"; };
 		69996BF72022E68B00BE5F67 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
+		69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMovieViewModel.swift; sourceTree = "<group>"; };
+		69996BFD2023136900BE5F67 /* DSMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMovieModel.swift; sourceTree = "<group>"; };
+		69996BFF202313AB00BE5F67 /* DSHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeModel.swift; sourceTree = "<group>"; };
+		69996C012023188C00BE5F67 /* DSDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDataModel.swift; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +239,8 @@
 		69996BEC2022B62A00BE5F67 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				69996BFC2023135000BE5F67 /* Model */,
+				69996BF92023130000BE5F67 /* ViewModel */,
 				69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */,
 				69996BE0202074AD00BE5F67 /* DSPlayerController.swift */,
 				69996BEF2022B9D200BE5F67 /* DSHomeController.swift */,
@@ -261,6 +271,24 @@
 				69996BF72022E68B00BE5F67 /* DSButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		69996BF92023130000BE5F67 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		69996BFC2023135000BE5F67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69996BFD2023136900BE5F67 /* DSMovieModel.swift */,
+				69996BFF202313AB00BE5F67 /* DSHomeModel.swift */,
+				69996C012023188C00BE5F67 /* DSDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -587,11 +615,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
+				69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */,
+				69996C022023188C00BE5F67 /* DSDataModel.swift in Sources */,
 				69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */,
 				69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
+				69996BFE2023136900BE5F67 /* DSMovieModel.swift in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
 				69996BCD2020200500BE5F67 /* DSNavigationController.swift in Sources */,
+				69996C00202313AB00BE5F67 /* DSHomeModel.swift in Sources */,
 				69996BD12020348F00BE5F67 /* UIColor+Extension.swift in Sources */,
 				69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */,
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,

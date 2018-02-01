@@ -24,7 +24,7 @@ class DSBaseController: UIViewController {
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        DSHttpManager.shareManager.request(url: "http://api.ishare.bthost.top/", parameters: nil, success: { (obj) in
+        DSHttpManager.share.request(url: "http://api.ishare.bthost.top/", parameters: nil, success: { (obj) in
             debugPrint(obj)
         }) { (error) in
             debugPrint(error)
