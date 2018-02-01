@@ -9,8 +9,8 @@ target 'AlamofireDemo' do
 
   # Pods for AlamofireDemo
   pod 'Alamofire'
-    pod 'SwiftyJSON'
-    pod 'SnapKit', '~> 4.0.0'
+  pod 'SwiftyJSON'
+  pod 'SnapKit', '~> 4.0.0'
 
 
   target 'AlamofireDemoTests' do

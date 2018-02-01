@@ -60,9 +60,10 @@ extension DSNavigationController{
         self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font : DSConfig.navigationBarTitleFont,NSAttributedStringKey.foregroundColor: UIColor.red];
     }
     fileprivate func backleftBarButtonItem()->UIBarButtonItem{
+        
         let backButton = UIButton(type: .custom)
-        backButton.setImage(UIImage(named: "back"), for: .normal)
-        backButton.size = CGSize(width: 44, height: 44)
+        backButton.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        backButton.size = CGSize(width: 22, height: 44)
         backButton.addTarget(self, action: #selector(DSNavigationController.back), for: .touchUpInside)
         let back = UIBarButtonItem(customView: backButton)
         return back;

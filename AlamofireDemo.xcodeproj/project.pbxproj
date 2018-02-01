@@ -28,6 +28,9 @@
 		69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */; };
 		69996BE1202074AD00BE5F67 /* DSPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BE0202074AD00BE5F67 /* DSPlayerController.swift */; };
 		69996BE82021761800BE5F67 /* UITabBar+CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996BE62021761800BE5F67 /* UITabBar+CustomBadge.m */; };
+		69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BEF2022B9D200BE5F67 /* DSHomeController.swift */; };
+		69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */; };
+		69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BF42022BC9A00BE5F67 /* DSProfileController.swift */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,10 @@
 		69996BE52021761700BE5F67 /* AlamofireDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlamofireDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		69996BE62021761800BE5F67 /* UITabBar+CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CustomBadge.m"; sourceTree = "<group>"; };
 		69996BE72021761800BE5F67 /* UITabBar+CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CustomBadge.h"; sourceTree = "<group>"; };
+		69996BEF2022B9D200BE5F67 /* DSHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeController.swift; sourceTree = "<group>"; };
+		69996BF12022BA6000BE5F67 /* UINavigationController+FullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FullscreenPopGesture.h"; sourceTree = "<group>"; };
+		69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FullscreenPopGesture.m"; sourceTree = "<group>"; };
+		69996BF42022BC9A00BE5F67 /* DSProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSProfileController.swift; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +195,7 @@
 		69996BE92022B56F00BE5F67 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				69996BEE2022B91000BE5F67 /* Profile */,
 				69996BEC2022B62A00BE5F67 /* Home */,
 			);
 			path = Modules;
@@ -207,6 +215,8 @@
 		69996BEB2022B5D000BE5F67 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				69996BF12022BA6000BE5F67 /* UINavigationController+FullscreenPopGesture.h */,
+				69996BF22022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m */,
 				69996BE72021761800BE5F67 /* UITabBar+CustomBadge.h */,
 				69996BE62021761800BE5F67 /* UITabBar+CustomBadge.m */,
 				69996BD02020348F00BE5F67 /* UIColor+Extension.swift */,
@@ -221,6 +231,7 @@
 			children = (
 				69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */,
 				69996BE0202074AD00BE5F67 /* DSPlayerController.swift */,
+				69996BEF2022B9D200BE5F67 /* DSHomeController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,6 +242,14 @@
 				69996B9720200BEC00BE5F67 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		69996BEE2022B91000BE5F67 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				69996BF42022BC9A00BE5F67 /* DSProfileController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -557,11 +576,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
+				69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */,
 				69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
 				69996BCD2020200500BE5F67 /* DSNavigationController.swift in Sources */,
 				69996BD12020348F00BE5F67 /* UIColor+Extension.swift in Sources */,
+				69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */,
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
@@ -569,6 +590,7 @@
 				69996BE82021761800BE5F67 /* UITabBar+CustomBadge.m in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
+				69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

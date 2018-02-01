@@ -28,5 +28,11 @@ let BASE_URL = "https://is.snssdk.com"
 let isIPhoneX: Bool = kScreenHeight == 812 ? true : false
 
 
+let SafeAreaBottomHeight:CGFloat = isIPhoneX ? 34 : 0
+
+let TabbarHeight:CGFloat = isIPhoneX ? 83 : 49 // 适配iPhone x 底栏高度
+let NavbarHeight:CGFloat = isIPhoneX ? 88 : 64
+
+
 let device_id: Int = 6096495334
 let iid: Int = 5034850950

@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = DSTabBarController();//DSNavigationController(rootViewController: DSPlayViewController())
-        
+        //window?.rootViewController = DSTabBarController();//DSNavigationController(rootViewController: DSPlayViewController())
+        window?.rootViewController = DSNavigationController(rootViewController: DSHomeController())
+
         window?.makeKeyAndVisible()
         return true
     }
