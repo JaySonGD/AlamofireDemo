@@ -14,7 +14,7 @@ target 'AlamofireDemo' do
   pod 'SDCycleScrollView'
   pod 'TFHpple'
   pod 'HandyJSON','~> 4.0.0-beta.1'
-
+  pod 'MBProgressHUD'
 
   target 'AlamofireDemoTests' do
     inherit! :search_paths
@@ -27,3 +27,4 @@ target 'AlamofireDemo' do
   end
 
 end
+

@@ -8,6 +8,7 @@
 
 import UIKit
 import SDCycleScrollView
+import MBProgressHUD
 
 class DSHomeController: DSBaseController {
 
@@ -44,9 +45,9 @@ class DSHomeController: DSBaseController {
 
         // Do any additional setup after loading the view.
         setUI()
-        //loadHomeData()
+        loadHomeData()
         
-        viewModel.getHtml()
+        //viewModel.getHtml()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,10 +80,9 @@ extension DSHomeController{
             self?.banerView.imageURLStringsGroup = urls
             self?.banerView.titlesGroup = titles
             
-            self?.view.removeLoading()
-            
-        }) { (msg) in
-            
+            self?.view.hideLoading("载入成功")
+        }) {[weak self] (msg) in
+            self?.view.hideLoading(msg)
         }
     }
 }

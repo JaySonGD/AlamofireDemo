@@ -24,6 +24,7 @@
 /**
  移除loading
  */
-- (void)removeLoading;
+//- (void)removeLoading;
+- (void)hideLoading:(NSString *)msg;
 
 @end

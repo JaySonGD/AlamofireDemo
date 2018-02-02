@@ -39,6 +39,8 @@
 		69996C052023F55100BE5F67 /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C042023F55100BE5F67 /* UIView+Loading.m */; };
 		69996C082023F6AB00BE5F67 /* UIView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C072023F6AB00BE5F67 /* UIView+Block.m */; };
 		69996C0B2023F82400BE5F67 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C0A2023F82400BE5F67 /* UIControl+Block.m */; };
+		69996C14202457A900BE5F67 /* MBHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 69996C0F202457A900BE5F67 /* MBHUD.bundle */; };
+		69996C15202457A900BE5F67 /* MBProgressHUD+iShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,9 @@
 		69996C072023F6AB00BE5F67 /* UIView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Block.m"; sourceTree = "<group>"; };
 		69996C092023F82400BE5F67 /* UIControl+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Block.h"; sourceTree = "<group>"; };
 		69996C0A2023F82400BE5F67 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
+		69996C0F202457A900BE5F67 /* MBHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBHUD.bundle; sourceTree = "<group>"; };
+		69996C10202457A900BE5F67 /* MBProgressHUD+iShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+iShare.h"; sourceTree = "<group>"; };
+		69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+iShare.m"; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,10 +174,10 @@
 		69996B9620200BEC00BE5F67 /* AlamofireDemo */ = {
 			isa = PBXGroup;
 			children = (
-				69996BED2022B65300BE5F67 /* AppDelegate */,
-				69996BEA2022B59D00BE5F67 /* Utils */,
-				69996BE92022B56F00BE5F67 /* Modules */,
 				69996BC720201FA000BE5F67 /* Base */,
+				69996BE92022B56F00BE5F67 /* Modules */,
+				69996BEA2022B59D00BE5F67 /* Utils */,
+				69996BED2022B65300BE5F67 /* AppDelegate */,
 				69996B9920200BEC00BE5F67 /* ViewController.swift */,
 				69996BE52021761700BE5F67 /* AlamofireDemo-Bridging-Header.h */,
 				69996B9B20200BEC00BE5F67 /* Main.storyboard */,
@@ -226,6 +231,7 @@
 				69996BD82020460B00BE5F67 /* DSConst.swift */,
 				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
 				69996BD6202044E900BE5F67 /* DSConfig.swift */,
+				69996C0E202457A900BE5F67 /* iShareHUD */,
 				69996BEB2022B5D000BE5F67 /* Category */,
 			);
 			path = Utils;
@@ -304,6 +310,16 @@
 				69996C012023188C00BE5F67 /* DSDataModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		69996C0E202457A900BE5F67 /* iShareHUD */ = {
+			isa = PBXGroup;
+			children = (
+				69996C0F202457A900BE5F67 /* MBHUD.bundle */,
+				69996C10202457A900BE5F67 /* MBProgressHUD+iShare.h */,
+				69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */,
+			);
+			path = iShareHUD;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -448,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69996C14202457A900BE5F67 /* MBHUD.bundle in Resources */,
 				69996BA220200BED00BE5F67 /* LaunchScreen.storyboard in Resources */,
 				69996B9F20200BEC00BE5F67 /* Assets.xcassets in Resources */,
 				69996B9D20200BEC00BE5F67 /* Main.storyboard in Resources */,
@@ -510,6 +527,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -520,6 +538,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -650,6 +669,7 @@
 				69996C00202313AB00BE5F67 /* DSHomeModel.swift in Sources */,
 				69996BD12020348F00BE5F67 /* UIColor+Extension.swift in Sources */,
 				69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */,
+				69996C15202457A900BE5F67 /* MBProgressHUD+iShare.m in Sources */,
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
