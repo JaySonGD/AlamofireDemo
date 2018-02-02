@@ -20,10 +20,9 @@ class DSHomeCell: UITableViewCell {
     
     var model: DSMovieModel?{
         didSet{
-           print(model?.author)
             nameLB.text = model?.name
             desLB.text = model?.info
-            logoIV.kf.
+            logoIV.kf.setImage(with: URL(string: (model?.logo)!))
         }
     }
     
@@ -31,6 +30,7 @@ class DSHomeCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         radiuContentView.layerCornerRadius(radiu: 10.0)
+        logoIV.layerCornerRadius(radiu: 6.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
