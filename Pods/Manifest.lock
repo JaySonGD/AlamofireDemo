@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - HandyJSON (4.0.0-beta.1)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.2.3):
@@ -7,20 +8,25 @@ PODS:
   - SDWebImage/Core (4.2.3)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
+  - TFHpple (2.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - HandyJSON (~> 4.0.0-beta.1)
   - SDCycleScrollView
   - SnapKit (~> 4.0.0)
   - SwiftyJSON
+  - TFHpple
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
 
-PODFILE CHECKSUM: 42827691c5c71f0bf3299629c6e8aaa47ca7102f
+PODFILE CHECKSUM: 3a81cf6330262cce781e3404064238382c9e622e
 
 COCOAPODS: 1.4.0

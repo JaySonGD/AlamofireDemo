@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIControl (Block)
-- (void)addEventHandler:(void(^)(UIControl *))block forControlEvents:(UIControlEvents)controlEvents;
+- (void)clickEventHandler:(void(^)(UIControl *))block forControlEvents:(UIControlEvents)controlEvents;
 
 @end

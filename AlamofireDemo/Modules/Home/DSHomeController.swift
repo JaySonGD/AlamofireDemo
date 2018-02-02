@@ -17,6 +17,7 @@ class DSHomeController: DSBaseController {
         btn.setImage(#imageLiteral(resourceName: "back"), for: .highlighted)
         btn.size = CGSize(width: 22, height: 44)
         btn.addTarget(self, action: #selector(DSHomeController.profileClick), for: .touchUpInside)
+      
         return UIBarButtonItem(customView: btn)
     }()
     
@@ -27,6 +28,7 @@ class DSHomeController: DSBaseController {
         let cycleView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
         cycleView.placeholderImage = #imageLiteral(resourceName: "back")
         cycleView.delegate = self
+        cycleView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
         return cycleView
     }()
     
@@ -42,7 +44,9 @@ class DSHomeController: DSBaseController {
 
         // Do any additional setup after loading the view.
         setUI()
-        loadHomeData()
+        //loadHomeData()
+        
+        viewModel.getHtml()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +72,13 @@ extension DSHomeController{
             let urls = baners?.map({
                 URL(string: $0.bimg)
             })
+            let titles = baners?.map({
+                 $0.name
+            })
+
             self?.banerView.imageURLStringsGroup = urls
+            self?.banerView.titlesGroup = titles
+            
             self?.view.removeLoading()
             
         }) { (msg) in

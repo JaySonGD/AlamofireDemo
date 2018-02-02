@@ -39,7 +39,7 @@ static void *buttonEventsBlockKey = &buttonEventsBlockKey;
  @param block 回调的block
  @param controlEvents 回调block的事件
  */
-- (void)addEventHandler:(void (^)(UIControl *))block forControlEvents:(UIControlEvents)controlEvents {
+- (void)clickEventHandler:(void (^)(UIControl *))block forControlEvents:(UIControlEvents)controlEvents {
     self.buttonEventsBlock = block;
     [self addTarget:self action:@selector(blcokButtonClicked:) forControlEvents:controlEvents];
 }

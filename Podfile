@@ -12,6 +12,8 @@ target 'AlamofireDemo' do
   pod 'SwiftyJSON'
   pod 'SnapKit', '~> 4.0.0'
   pod 'SDCycleScrollView'
+  pod 'TFHpple'
+  pod 'HandyJSON','~> 4.0.0-beta.1'
 
 
   target 'AlamofireDemoTests' do
