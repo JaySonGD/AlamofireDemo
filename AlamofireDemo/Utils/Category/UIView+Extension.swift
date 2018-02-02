@@ -106,5 +106,12 @@ extension UIView {
             self.frame = frame
         }
     }
+    
+    func layerCornerRadius(radiu:CGFloat,border:CGFloat = 0,color:UIColor = UIColor.clear) {
+        layer.borderWidth = border
+        layer.borderColor = color.cgColor
+        layer.cornerRadius = radiu;
+        layer.masksToBounds = true;
+    }
 }
 

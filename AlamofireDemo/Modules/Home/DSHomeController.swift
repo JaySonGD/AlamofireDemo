@@ -36,6 +36,12 @@ class DSHomeController: DSBaseController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
         tableView.tableHeaderView = banerView
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 130
+        tableView.separatorStyle = .none
+        let nib = UINib(nibName: DSHomeCell.className, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: DSHomeCell.className)
         return tableView
     }()
     
@@ -46,8 +52,7 @@ class DSHomeController: DSBaseController {
         // Do any additional setup after loading the view.
         setUI()
         loadHomeData()
-        
-        //viewModel.getHtml()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +60,20 @@ class DSHomeController: DSBaseController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension DSHomeController: UITableViewDelegate,UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.homeModel?.data.category.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DSHomeCell.className) as! DSHomeCell
+        cell.backgroundColor = UIColor.random
+        cell.model = viewModel.homeModel?.data.category[indexPath.row]
+        return cell
+    }
 }
 
 extension DSHomeController:SDCycleScrollViewDelegate{
@@ -79,7 +98,7 @@ extension DSHomeController{
 
             self?.banerView.imageURLStringsGroup = urls
             self?.banerView.titlesGroup = titles
-            
+            self?.tableView.reloadData()
             self?.view.hideLoading("载入成功")
         }) {[weak self] (msg) in
             self?.view.hideLoading(msg)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04D9989421EAFD6DB8D964F6 /* Pods_AlamofireDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8F35B9099E8CFAA5010748 /* Pods_AlamofireDemo.framework */; };
+		69306A9D202463B900BDFAC8 /* UITableViewCell+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69306A9C202463B900BDFAC8 /* UITableViewCell+String.swift */; };
 		69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996B9720200BEC00BE5F67 /* AppDelegate.swift */; };
 		69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996B9920200BEC00BE5F67 /* ViewController.swift */; };
 		69996B9D20200BEC00BE5F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69996B9B20200BEC00BE5F67 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 		69996C0B2023F82400BE5F67 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C0A2023F82400BE5F67 /* UIControl+Block.m */; };
 		69996C14202457A900BE5F67 /* MBHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 69996C0F202457A900BE5F67 /* MBHUD.bundle */; };
 		69996C15202457A900BE5F67 /* MBProgressHUD+iShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */; };
+		69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996C1720245F2A00BE5F67 /* DSHomeCell.swift */; };
+		69996C1A20245F2A00BE5F67 /* DSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69996C1820245F2A00BE5F67 /* DSHomeCell.xib */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,7 @@
 		02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8F35B9099E8CFAA5010748 /* Pods_AlamofireDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8F91C89AD9336370147C21 /* Pods-AlamofireDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		69306A9C202463B900BDFAC8 /* UITableViewCell+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+String.swift"; sourceTree = "<group>"; };
 		69996B9420200BEC00BE5F67 /* AlamofireDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69996B9720200BEC00BE5F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69996B9920200BEC00BE5F67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		69996C0F202457A900BE5F67 /* MBHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBHUD.bundle; sourceTree = "<group>"; };
 		69996C10202457A900BE5F67 /* MBProgressHUD+iShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+iShare.h"; sourceTree = "<group>"; };
 		69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+iShare.m"; sourceTree = "<group>"; };
+		69996C1720245F2A00BE5F67 /* DSHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeCell.swift; sourceTree = "<group>"; };
+		69996C1820245F2A00BE5F67 /* DSHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHomeCell.xib; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +259,7 @@
 				69996C072023F6AB00BE5F67 /* UIView+Block.m */,
 				69996C092023F82400BE5F67 /* UIControl+Block.h */,
 				69996C0A2023F82400BE5F67 /* UIControl+Block.m */,
+				69306A9C202463B900BDFAC8 /* UITableViewCell+String.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 		69996BEC2022B62A00BE5F67 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				69996C1B20245F3000BE5F67 /* View */,
 				69996BFC2023135000BE5F67 /* Model */,
 				69996BF92023130000BE5F67 /* ViewModel */,
 				69996BDE20206BC300BE5F67 /* DSPlayViewController.swift */,
@@ -320,6 +328,15 @@
 				69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */,
 			);
 			path = iShareHUD;
+			sourceTree = "<group>";
+		};
+		69996C1B20245F3000BE5F67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69996C1720245F2A00BE5F67 /* DSHomeCell.swift */,
+				69996C1820245F2A00BE5F67 /* DSHomeCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -467,6 +484,7 @@
 				69996C14202457A900BE5F67 /* MBHUD.bundle in Resources */,
 				69996BA220200BED00BE5F67 /* LaunchScreen.storyboard in Resources */,
 				69996B9F20200BEC00BE5F67 /* Assets.xcassets in Resources */,
+				69996C1A20245F2A00BE5F67 /* DSHomeCell.xib in Resources */,
 				69996B9D20200BEC00BE5F67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +545,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -538,6 +557,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -662,6 +682,7 @@
 				69996C022023188C00BE5F67 /* DSDataModel.swift in Sources */,
 				69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */,
 				69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */,
+				69306A9D202463B900BDFAC8 /* UITableViewCell+String.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
 				69996BFE2023136900BE5F67 /* DSMovieModel.swift in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
@@ -673,6 +694,7 @@
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
+				69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */,
 				69996BE1202074AD00BE5F67 /* DSPlayerController.swift in Sources */,
 				69996BE82021761800BE5F67 /* UITabBar+CustomBadge.m in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,

@@ -29,7 +29,9 @@ class DSDataModel: NSObject {
         }
         category = [DSMovieModel]()
         if let categoryArray = dictionary["category"] as? [[String:Any]]{
-            for dic in categoryArray{
+            let categoryDict = categoryArray.first as? [String:Any]
+            let dataArray = categoryDict!["data"] as? [[String:Any]]
+            for dic in dataArray!{
                 let value = DSMovieModel(fromDictionary: dic)
                 category.append(value)
             }

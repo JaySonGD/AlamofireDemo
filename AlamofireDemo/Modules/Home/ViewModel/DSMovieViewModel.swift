@@ -52,6 +52,7 @@ class DSMovieViewModel: NSObject {
     
     func loadHomeData(success:@escaping ()->(),
                       failure:@escaping (_ error:String)->()) {
+        
         DSHttpManager.share.request(url: "http://api.ishare.bthost.top/",
                                     parameters: ["c":"movie","a":"home","debug":9],
                                     success: {[weak self] (obj) in
@@ -61,6 +62,7 @@ class DSMovieViewModel: NSObject {
                                         (success == nil) ? (): success()
                                         print(obj)
                                     }) { (error) in
+                                        (failure == nil) ? (): failure(error.localizedDescription)
                                         print(error)
                                     }
     }

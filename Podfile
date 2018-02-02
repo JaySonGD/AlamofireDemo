@@ -15,6 +15,7 @@ target 'AlamofireDemo' do
   pod 'TFHpple'
   pod 'HandyJSON','~> 4.0.0-beta.1'
   pod 'MBProgressHUD'
+  pod 'Kingfisher', '~> 4.6'
 
   target 'AlamofireDemoTests' do
     inherit! :search_paths
