@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDCycleScrollView
 
 class DSHomeController: DSBaseController {
 
@@ -20,6 +21,20 @@ class DSHomeController: DSBaseController {
     }()
     
     lazy var viewModel = DSMovieViewModel()
+    
+    
+    lazy var banerView: SDCycleScrollView = {
+        let cycleView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
+        cycleView.placeholderImage = #imageLiteral(resourceName: "back")
+        cycleView.delegate = self
+        return cycleView
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
+        tableView.tableHeaderView = banerView
+        return tableView
+    }()
     
     
     override func viewDidLoad() {
@@ -37,9 +52,24 @@ class DSHomeController: DSBaseController {
 
 }
 
+extension DSHomeController:SDCycleScrollViewDelegate{
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        print(index)
+    }
+}
+
 extension DSHomeController{
     fileprivate func loadHomeData(){
+        view.showLoading()
         viewModel.loadHomeData(success: { [weak self] in
+            
+            let homeModel =  self?.viewModel.homeModel
+            let baners = homeModel?.data.banner
+            let urls = baners?.map({
+                URL(string: $0.bimg)
+            })
+            self?.banerView.imageURLStringsGroup = urls
+            self?.view.removeLoading()
             
         }) { (msg) in
             
@@ -58,5 +88,7 @@ extension DSHomeController{
     private func setUI() {
         navigationItem.leftBarButtonItem = profileItem
         navigationItem.title = "港澳通"
+        
+        view.addSubview(tableView)
     }
 }

@@ -5,3 +5,6 @@
 
 #import "UITabBar+CustomBadge.h"
 
+
+#import "UIView+Loading.h"
+

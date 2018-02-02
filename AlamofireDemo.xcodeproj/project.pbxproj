@@ -36,6 +36,9 @@
 		69996BFE2023136900BE5F67 /* DSMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFD2023136900BE5F67 /* DSMovieModel.swift */; };
 		69996C00202313AB00BE5F67 /* DSHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFF202313AB00BE5F67 /* DSHomeModel.swift */; };
 		69996C022023188C00BE5F67 /* DSDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996C012023188C00BE5F67 /* DSDataModel.swift */; };
+		69996C052023F55100BE5F67 /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C042023F55100BE5F67 /* UIView+Loading.m */; };
+		69996C082023F6AB00BE5F67 /* UIView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C072023F6AB00BE5F67 /* UIView+Block.m */; };
+		69996C0B2023F82400BE5F67 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C0A2023F82400BE5F67 /* UIControl+Block.m */; };
 		8E399FA4F9B21471CFF8B0A3 /* Pods_AlamofireDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FFE811888612B10F86AB41 /* Pods_AlamofireDemoUITests.framework */; };
 		B304F852A8FA4C06E908F43F /* Pods_AlamofireDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,12 @@
 		69996BFD2023136900BE5F67 /* DSMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMovieModel.swift; sourceTree = "<group>"; };
 		69996BFF202313AB00BE5F67 /* DSHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeModel.swift; sourceTree = "<group>"; };
 		69996C012023188C00BE5F67 /* DSDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDataModel.swift; sourceTree = "<group>"; };
+		69996C032023F55100BE5F67 /* UIView+Loading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
+		69996C042023F55100BE5F67 /* UIView+Loading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
+		69996C062023F6AB00BE5F67 /* UIView+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Block.h"; sourceTree = "<group>"; };
+		69996C072023F6AB00BE5F67 /* UIView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Block.m"; sourceTree = "<group>"; };
+		69996C092023F82400BE5F67 /* UIControl+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Block.h"; sourceTree = "<group>"; };
+		69996C0A2023F82400BE5F67 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
 		83E6475AA922003D6F0886B0 /* Pods-AlamofireDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemoTests/Pods-AlamofireDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +241,12 @@
 				69996BD02020348F00BE5F67 /* UIColor+Extension.swift */,
 				69996BD22020365B00BE5F67 /* UIView+Extension.swift */,
 				69996BD42020404100BE5F67 /* UIFont+Extension.swift */,
+				69996C032023F55100BE5F67 /* UIView+Loading.h */,
+				69996C042023F55100BE5F67 /* UIView+Loading.m */,
+				69996C062023F6AB00BE5F67 /* UIView+Block.h */,
+				69996C072023F6AB00BE5F67 /* UIView+Block.m */,
+				69996C092023F82400BE5F67 /* UIControl+Block.h */,
+				69996C0A2023F82400BE5F67 /* UIControl+Block.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -494,12 +509,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -614,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69996C082023F6AB00BE5F67 /* UIView+Block.m in Sources */,
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
 				69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */,
 				69996C022023188C00BE5F67 /* DSDataModel.swift in Sources */,
@@ -633,9 +653,11 @@
 				69996BE82021761800BE5F67 /* UITabBar+CustomBadge.m in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
+				69996C052023F55100BE5F67 /* UIView+Loading.m in Sources */,
 				69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */,
 				69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
+				69996C0B2023F82400BE5F67 /* UIControl+Block.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class DSMovieViewModel: NSObject {
 
-    var model : DSHomeModel?
+    var homeModel : DSHomeModel?
     
     func loadHomeData(success:@escaping ()->(),
                       failure:@escaping (_ error:String)->()) {
@@ -20,8 +20,8 @@ class DSMovieViewModel: NSObject {
                                     success: {[weak self] (obj) in
                                         
                                         let json = JSON(obj)
-                                        self?.model = DSHomeModel(fromDictionary: json.dictionaryObject!)
-                                        
+                                        self?.homeModel = DSHomeModel(fromDictionary: json.dictionaryObject!)
+                                        (success == nil) ? (): success()
                                         print(obj)
                                     }) { (error) in
                                         print(error)
