@@ -23,7 +23,7 @@ struct DSConfig {
         get {return DSConfig.barTintColor}
     }
     static var viewBackgroundColor: UIColor {
-        get {return UIColor.rgbColor(r: 244, g: 245, b: 247)}
+        get {return UIColor.rgbColor(r: 236, g: 237, b: 238)}
     }
     // MARK: - <font>
 

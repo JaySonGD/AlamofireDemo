@@ -27,8 +27,10 @@ class DSHomeController: DSBaseController {
     
     lazy var banerView: SDCycleScrollView = {
         let cycleView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
-        cycleView.placeholderImage = #imageLiteral(resourceName: "back")
+        //cycleView.placeholderImage = #imageLiteral(resourceName: "back")
         cycleView.delegate = self
+        cycleView.backgroundColor = DSConfig.viewBackgroundColor
+        
         cycleView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
         return cycleView
     }()
@@ -42,6 +44,7 @@ class DSHomeController: DSBaseController {
         tableView.separatorStyle = .none
         let nib = UINib(nibName: DSHomeCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DSHomeCell.className)
+        tableView.backgroundColor = DSConfig.viewBackgroundColor
         return tableView
     }()
     
@@ -73,6 +76,10 @@ extension DSHomeController: UITableViewDelegate,UITableViewDataSource{
         cell.backgroundColor = UIColor.random
         cell.model = viewModel.homeModel?.data.category[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -117,7 +124,8 @@ extension DSHomeController{
     private func setUI() {
         navigationItem.leftBarButtonItem = profileItem
         navigationItem.title = "港澳通"
-        
+        view.backgroundColor = DSConfig.viewBackgroundColor
+
         view.addSubview(tableView)
     }
 }

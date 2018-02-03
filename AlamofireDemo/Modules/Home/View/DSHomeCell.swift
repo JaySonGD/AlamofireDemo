@@ -18,11 +18,19 @@ class DSHomeCell: UITableViewCell {
     @IBOutlet weak var desLB: UILabel!
     @IBOutlet weak var logoIV: UIImageView!
     
+    @IBAction func collectClick(_ sender: UIButton) {
+        
+        model?.isSelected = !(model?.isSelected)!
+        sender.isSelected = (model?.isSelected)!
+        
+        
+    }
     var model: DSMovieModel?{
         didSet{
             nameLB.text = model?.name
             desLB.text = model?.info
             logoIV.kf.setImage(with: URL(string: (model?.logo)!))
+            collectBtn.isSelected = (model?.isSelected)!
         }
     }
     

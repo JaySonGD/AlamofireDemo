@@ -8,24 +8,27 @@
 
 import UIKit
 
-class DSMovieModel: NSObject {
+
+@objcMembers class DSMovieModel: NSObject{
     
-    var author : String!
-    var banner : String!
-    var bimg : String!
-    var category : String!
-    var country : String!
-    var director : String!
-    var id : String!
-    var info : String!
-    var logo : String!
-    var mdate : String!
-    var mtime : String!
-    var name : String!
-    var score : String!
-    var see : String!
-    var style : String!
-    var url : String!
+    
+    dynamic var author: String!
+    dynamic var banner: String!
+    dynamic var bimg: String!
+    dynamic var category: String!
+    dynamic var country: String!
+    dynamic var director: String!
+    dynamic var id: String!
+    dynamic var info: String!
+    dynamic var logo: String!
+    dynamic var mdate: String!
+    dynamic var mtime: String!
+    dynamic var name: String!
+    dynamic var score: String!
+    dynamic var see: String!
+    dynamic var style: String!
+    dynamic var url: String!
+    dynamic var isSelected:Bool = false
     
     
     /**
@@ -49,5 +52,8 @@ class DSMovieModel: NSObject {
         style = dictionary["style"] as? String
         url = dictionary["url"] as? String
     }
+    
+    
+
 
 }

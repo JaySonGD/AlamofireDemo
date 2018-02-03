@@ -47,7 +47,28 @@ class DSNavigationController: UINavigationController {
             viewController.hidesBottomBarWhenPushed = true
             viewController.navigationItem.leftBarButtonItem = backleftBarButtonItem()
         }
-        super.pushViewController(viewController, animated: true)
+        /* 创建转场动画 */
+        let transition = CATransition()
+        transition.duration = 0.5; // 动画时间
+        transition.type = "pageUnCurl"; // 动画样式
+        transition.subtype = kCATransitionFromBottom; // 动画方向
+        
+        self.view.layer.add(transition, forKey: "kCATransition")
+        /* 页面切换 */
+        super.pushViewController(viewController, animated: false)
+    }
+    
+    override func popViewController(animated: Bool) -> UIViewController? {
+        
+        /* 创建转场动画 */
+        let transition = CATransition()
+        transition.duration = 0.5; // 动画时间
+        transition.type = "pageCurl"; // 动画样式
+        transition.subtype = kCATransitionFromBottom; // 动画方向
+        
+        self.view.layer.add(transition, forKey: "kCATransition")
+        /* 页面切换 */
+        return super.popViewController(animated: false)
     }
 
 }
@@ -70,6 +91,6 @@ extension DSNavigationController{
         
     }
     @objc fileprivate func back(){
-        popViewController(animated: true)
+       let _ = popViewController(animated: true)
     }
 }
