@@ -127,7 +127,7 @@ class DSProfileController: DSBaseController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillDisappear(animated)
         navigationController?.navigationBar.setBackgroundImage(DSConfig.barTintColor.image, for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     }

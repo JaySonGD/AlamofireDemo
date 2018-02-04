@@ -8,11 +8,11 @@
 
 import UIKit
 
-extension UITableViewCell{
+extension UIView{
    static var className: String {
         get {
             let name : NSString = NSStringFromClass(self.self) as NSString
-            return name.pathExtension
+            return ((name.pathExtension).characters.count  > 1) ? name.pathExtension : (name as String)
         }
     }
 }

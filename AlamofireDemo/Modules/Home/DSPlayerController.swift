@@ -2,60 +2,46 @@
 //  DSPlayerController.swift
 //  AlamofireDemo
 //
-//  Created by Jay on 2018/1/30.
+//  Created by czljcb on 2018/2/4.
 //  Copyright © 2018年 Jay. All rights reserved.
 //
 
 import UIKit
 
 class DSPlayerController: DSBaseController {
-
+    
+    @IBOutlet weak var titleLB: UILabel!
+    @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var logoIV: UIImageView!
+    @IBOutlet weak var bgIV: UIImageView!
+    @IBOutlet weak var collectBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        DSAppDelegate.allowRotation = true;
+
         // Do any additional setup after loading the view.
-        
-        
-        if let tabVC = DSAppDelegate.window?.rootViewController as? DSTabBarController {
-            tabVC.tabBar.setBadgeStyle(.styleRedDot, value: 99, at: 1)
-
-        }
-
+        setUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        DSAppDelegate.allowRotation = false;
-        dismiss(animated: true, completion: nil)
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: false)
+//    }
+    override func viewDidDisappear(_ animated: Bool) {
+        su
+    }
+    
 
-    }
-    
-    
-    override var prefersStatusBarHidden: Bool{
-        return false
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
-//    
-//    override var shouldAutorotate: Bool{
-//        return false
-//    }
-//    
-//    
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-//        return .landscapeRight
-//    }
-//    
-//    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
-//        return .landscapeRight
-//    }
 
     /*
     // MARK: - Navigation
@@ -66,5 +52,20 @@ class DSPlayerController: DSBaseController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func backClick(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func playClick(_ sender: UIButton) {
+    }
+    
+}
+
+
+extension DSPlayerController{
+    private func setUI(){
+        let bar = UIToolbar(frame: UIScreen.main.bounds)
+        bar.barStyle = .black
+        bgIV.addSubview(bar)
+    }
 
 }

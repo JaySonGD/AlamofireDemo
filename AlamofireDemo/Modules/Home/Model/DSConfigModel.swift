@@ -15,6 +15,7 @@ class DSConfigModel : NSObject{
 	var alert : DSAlertModel!
 	var banner : [DSBannerModel]!
 	var kds : DSKdsModel!
+    var category : [DSCategoryModel]!
 
 
 	/**
@@ -40,6 +41,15 @@ class DSConfigModel : NSObject{
 		if let kdsData = dictionary["kds"] as? [String:Any]{
 			kds = DSKdsModel(fromDictionary: kdsData)
 		}
+        
+        category = [DSCategoryModel]()
+        if let categoryArray = dictionary["category"] as? [[String:Any]]{
+            for dic in categoryArray{
+                let value = DSCategoryModel(fromDictionary: dic)
+                category.append(value)
+            }
+        }
+
 	}
 
 }

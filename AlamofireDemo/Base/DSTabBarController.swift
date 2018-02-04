@@ -27,7 +27,7 @@ class DSTabBarController: UITabBarController {
         return (selectedViewController?.childViewControllers.last?.prefersStatusBarHidden) ?? false
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        return (selectedViewController?.childViewControllers.last?.preferredStatusBarStyle) ?? .default
+        return (selectedViewController?.childViewControllers.last?.preferredStatusBarStyle) ?? .lightContent
     }
     
     override var shouldAutorotate: Bool{

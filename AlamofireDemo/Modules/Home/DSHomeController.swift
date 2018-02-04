@@ -12,7 +12,13 @@ import MBProgressHUD
 import LYEmptyView
 
 class DSHomeController: DSBaseController {
+    lazy var viewModel = DSMovieViewModel()
 
+    lazy var player: UIBarButtonItem = {
+        let player = UIBarButtonItem(image: #imageLiteral(resourceName: "player"), style: .plain, target: self, action: #selector(DSHomeController.playerClick))
+        return player
+    }()
+    
     lazy var profileItem :UIBarButtonItem = {
         let btn = UIButton(type: .custom)
         btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
@@ -23,11 +29,11 @@ class DSHomeController: DSBaseController {
         return UIBarButtonItem(customView: btn)
     }()
     
-    lazy var viewModel = DSMovieViewModel()
     
     
     lazy var banerView: SDCycleScrollView = {
-        let cycleView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
+        let bh = 6.0 * kScreenWidth / 16.0
+        let cycleView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: bh))
         //cycleView.placeholderImage = #imageLiteral(resourceName: "back")
         cycleView.delegate = self
         cycleView.backgroundColor = DSConfig.viewBackgroundColor
@@ -36,11 +42,47 @@ class DSHomeController: DSBaseController {
         return cycleView
     }()
     
+    lazy var cateView: UICollectionView = {
+        let ch = (kScreenWidth - 50) * 0.25
+        let bh = 6.0 * kScreenWidth / 16.0
+
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: ch, height: ch)
+        //layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: bh+10, width: kScreenWidth, height: ch), collectionViewLayout: layout)
+        
+
+        collectionView.register(UINib(nibName: DSCategoryCell.className, bundle: nil), forCellWithReuseIdentifier: DSCategoryCell.className)
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.className)
+//        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = DSConfig.viewBackgroundColor
+
+        return collectionView
+    }()
+    
+    lazy var headerView: UIView = {
+        
+        let bh = 6.0 * kScreenWidth / 16.0
+        let ch = (kScreenWidth - 50) * 0.25
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: bh + ch + 10))
+        headerView.backgroundColor = DSConfig.viewBackgroundColor
+        headerView.addSubview(self.banerView)
+        headerView.addSubview(self.cateView)
+        headerView.clipsToBounds = true
+        return headerView
+    }()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
         tableView.y = NavbarHeight
         tableView.height = kScreenHeight - NavbarHeight - SafeAreaBottomHeight
-        tableView.tableHeaderView = banerView
+        tableView.tableHeaderView = headerView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 130
@@ -80,7 +122,16 @@ class DSHomeController: DSBaseController {
     }
 
 }
-
+extension DSHomeController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.homeModel?.config.category.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DSCategoryCell.className, for: indexPath) as! DSCategoryCell
+        cell.model = viewModel.homeModel?.config.category[indexPath.item]
+        return cell
+    }
+}
 
 extension DSHomeController: UITableViewDelegate,UITableViewDataSource{
     
@@ -111,6 +162,9 @@ extension DSHomeController{
         view.showLoading()
         viewModel.loadHomeData(success: { [weak self] in
             
+            
+
+            
             let homeModel =  self?.viewModel.homeModel
             let baners = homeModel?.config.banner
             let urls = baners?.map({
@@ -119,6 +173,10 @@ extension DSHomeController{
             let titles = baners?.map({
                  $0.title
             })
+            let bh = 6.0 * kScreenWidth / 16.0
+
+            (homeModel?.config.category.count != 0) ? () : (self?.headerView.height = bh)
+            self?.view.addSubview((self?.tableView)!)
 
             self?.banerView.imageURLStringsGroup = urls
             self?.banerView.titlesGroup = titles
@@ -136,6 +194,10 @@ extension DSHomeController{
 }
 
 extension DSHomeController{
+    @objc private func playerClick(){
+        navigationController?.pushViewController(DSPlayerController(), animated: true)
+    }
+    
     @objc private func profileClick(){
         print(123)
         navigationController?.pushViewController(DSProfileController(), animated: true)
@@ -147,7 +209,7 @@ extension DSHomeController{
         navigationItem.leftBarButtonItem = profileItem
         navigationItem.title = "港澳通"
         view.backgroundColor = DSConfig.viewBackgroundColor
+        navigationItem.rightBarButtonItem = player
 
-        view.addSubview(tableView)
     }
 }

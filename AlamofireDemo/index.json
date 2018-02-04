@@ -18,6 +18,20 @@
                    "url": "https://static-cdn.aso100.com/pic/view/type/screenshot/source/aHR0cDovL2lzMi5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvUHVycGxlMTE4L3Y0LzBmLzExLzRlLzBmMTE0ZTZhLWU2MTctMTJmYy1iZDU3LTA2MjQ0MjYyNjU4OS9zb3VyY2UvMzkyeDY5NmJiLmpwZw==",
                    "isPlay": false
                    }],
+        "category": [{
+                     "title": "香港",
+                     "url": "https://static-cdn.aso100.com/pic/view/type/screenshot/source/aHR0cDovL2lzMi5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvUHVycGxlMTE4L3Y0LzBmLzExLzRlLzBmMTE0ZTZhLWU2MTctMTJmYy1iZDU3LTA2MjQ0MjYyNjU4OS9zb3VyY2UvMzkyeDY5NmJiLmpwZw==",
+                     "image": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4008694859,1884728145&fm=27&gp=0.jpg"
+                     },{
+                     "title": "台湾",
+                     "url": "https://static-cdn.aso100.com/pic/view/type/screenshot/source/aHR0cDovL2lzMi5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvUHVycGxlMTE4L3Y0LzBmLzExLzRlLzBmMTE0ZTZhLWU2MTctMTJmYy1iZDU3LTA2MjQ0MjYyNjU4OS9zb3VyY2UvMzkyeDY5NmJiLmpwZw==",
+                     "image": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4008694859,1884728145&fm=27&gp=0.jpg"
+                     },
+                     {
+                     "title": "本地",
+                     "url": "app://DSTVListController/?",
+                     "image": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4008694859,1884728145&fm=27&gp=0.jpg"
+                     }],
         "admob": {
             "googleMobileAdsAppID": "ca-app-pub-5953290785266149~4210811289",
             "googleMobileAdsInterstitialID": "ca-app-pub-5953290785266149/2511550957",

@@ -13,7 +13,7 @@ class DSBaseController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = DSConfig.viewBackgroundColor
         // Do any additional setup after loading the view.
     }
 
@@ -22,15 +22,11 @@ class DSBaseController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        DSHttpManager.share.request(url: "http://api.ishare.bthost.top/", parameters: nil, success: { (obj) in
-            debugPrint(obj)
-        }) { (error) in
-            debugPrint(error)
-        }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return  .lightContent
     }
-    
+
+        
     /*
     // MARK: - Navigation
 
