@@ -13,7 +13,7 @@ import TFHpple
 
 class DSMovieViewModel: NSObject {
 
-    var homeModel : DSHome?
+    var homeModel : DSHomeModel?
     
     
     func getHtml()  {
@@ -58,7 +58,7 @@ class DSMovieViewModel: NSObject {
                                     success: {[weak self] (obj) in
                                         
                                         let json = JSON(obj)
-                                        self?.homeModel = DSHome(fromDictionary: json.dictionaryObject!)
+                                        self?.homeModel = DSHomeModel(fromDictionary: json.dictionaryObject!)
                                         (success == nil) ? (): success()
                                         print(obj)
                                     }) { (error) in

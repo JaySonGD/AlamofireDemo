@@ -1,26 +1,33 @@
 //
-//  DSHomeModel.swift
-//  AlamofireDemo
+//	DSHome.swift
 //
-//  Created by Jay on 2018/2/1.
-//  Copyright © 2018年 Jay. All rights reserved.
-//
+//	Create by Jayson on 4/2/2018
+//	Copyright © 2018. All rights reserved.
+//	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
-import UIKit
+import Foundation
 
-class DSHomeModel: NSObject {
-    
-    var code : Int!
-    var data : DSDataModel!
-    var msg : String!
-    var ver : String!
-    
-    init(fromDictionary dictionary: [String:Any]){
-        code = dictionary["code"] as? Int
-        if let dataData = dictionary["data"] as? [String:Any]{
-            data = DSDataModel(fromDictionary: dataData)
-        }
-        msg = dictionary["msg"] as? String
-        ver = dictionary["ver"] as? String
-    }
+
+class DSHomeModel : NSObject{
+
+	var config : DSConfigModel!
+	var list : [DSListModel]!
+
+
+	/**
+	 * Instantiate the instance using the passed dictionary values to set the properties values
+	 */
+	init(fromDictionary dictionary: [String:Any]){
+		if let configData = dictionary["config"] as? [String:Any]{
+			config = DSConfigModel(fromDictionary: configData)
+		}
+		list = [DSListModel]()
+		if let listArray = dictionary["list"] as? [[String:Any]]{
+			for dic in listArray{
+				let value = DSListModel(fromDictionary: dic)
+				list.append(value)
+			}
+		}
+	}
+
 }
