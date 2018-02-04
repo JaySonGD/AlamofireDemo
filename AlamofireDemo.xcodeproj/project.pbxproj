@@ -44,7 +44,17 @@
 		69996C15202457A900BE5F67 /* MBProgressHUD+iShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */; };
 		69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996C1720245F2A00BE5F67 /* DSHomeCell.swift */; };
 		69996C1A20245F2A00BE5F67 /* DSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69996C1820245F2A00BE5F67 /* DSHomeCell.xib */; };
+		AB3683002026AFD7003408D7 /* DSHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F72026AFD6003408D7 /* DSHome.swift */; };
+		AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F82026AFD6003408D7 /* DSAlertModel.swift */; };
+		AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F92026AFD6003408D7 /* DSAdmobModel.swift */; };
+		AB3683032026AFD7003408D7 /* DSAdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682FA2026AFD7003408D7 /* DSAdModel.swift */; };
+		AB3683042026AFD7003408D7 /* DSBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682FB2026AFD7003408D7 /* DSBannerModel.swift */; };
+		AB3683052026AFD7003408D7 /* DSKdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682FC2026AFD7003408D7 /* DSKdsModel.swift */; };
+		AB3683062026AFD7003408D7 /* DSActModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682FD2026AFD7003408D7 /* DSActModel.swift */; };
+		AB3683072026AFD7003408D7 /* DSConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682FE2026AFD7003408D7 /* DSConfigModel.swift */; };
+		AB3683082026AFD7003408D7 /* DSListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682FF2026AFD7003408D7 /* DSListModel.swift */; };
 		AB443C6720258AEA00720972 /* DSCollectSQLiteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB443C6620258AEA00720972 /* DSCollectSQLiteModel.swift */; };
+		ABB5B5B82026DDB300430C7B /* NSError+Message.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB5B5B72026DDB300430C7B /* NSError+Message.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +126,19 @@
 		69996C11202457A900BE5F67 /* MBProgressHUD+iShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+iShare.m"; sourceTree = "<group>"; };
 		69996C1720245F2A00BE5F67 /* DSHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeCell.swift; sourceTree = "<group>"; };
 		69996C1820245F2A00BE5F67 /* DSHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHomeCell.xib; sourceTree = "<group>"; };
+		AB3682F62026AB45003408D7 /* index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
+		AB3682F72026AFD6003408D7 /* DSHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHome.swift; sourceTree = "<group>"; };
+		AB3682F82026AFD6003408D7 /* DSAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAlertModel.swift; sourceTree = "<group>"; };
+		AB3682F92026AFD6003408D7 /* DSAdmobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAdmobModel.swift; sourceTree = "<group>"; };
+		AB3682FA2026AFD7003408D7 /* DSAdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAdModel.swift; sourceTree = "<group>"; };
+		AB3682FB2026AFD7003408D7 /* DSBannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBannerModel.swift; sourceTree = "<group>"; };
+		AB3682FC2026AFD7003408D7 /* DSKdsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSKdsModel.swift; sourceTree = "<group>"; };
+		AB3682FD2026AFD7003408D7 /* DSActModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSActModel.swift; sourceTree = "<group>"; };
+		AB3682FE2026AFD7003408D7 /* DSConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSConfigModel.swift; sourceTree = "<group>"; };
+		AB3682FF2026AFD7003408D7 /* DSListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSListModel.swift; sourceTree = "<group>"; };
 		AB443C6620258AEA00720972 /* DSCollectSQLiteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCollectSQLiteModel.swift; sourceTree = "<group>"; };
+		ABB5B5B62026DDB300430C7B /* NSError+Message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+Message.h"; sourceTree = "<group>"; };
+		ABB5B5B72026DDB300430C7B /* NSError+Message.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+Message.m"; sourceTree = "<group>"; };
 		BADD5F98529BFF0BD96D508C /* Pods-AlamofireDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A6D93CFA99F28F17B1B189 /* Pods_AlamofireDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A8A1822DA49079422A59FC /* Pods-AlamofireDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireDemo/Pods-AlamofireDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +196,7 @@
 		69996B9620200BEC00BE5F67 /* AlamofireDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AB3682F62026AB45003408D7 /* index.json */,
 				69996BC720201FA000BE5F67 /* Base */,
 				69996BE92022B56F00BE5F67 /* Modules */,
 				69996BEA2022B59D00BE5F67 /* Utils */,
@@ -254,6 +277,8 @@
 				69996C092023F82400BE5F67 /* UIControl+Block.h */,
 				69996C0A2023F82400BE5F67 /* UIControl+Block.m */,
 				69306A9C202463B900BDFAC8 /* UITableViewCell+String.swift */,
+				ABB5B5B62026DDB300430C7B /* NSError+Message.h */,
+				ABB5B5B72026DDB300430C7B /* NSError+Message.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -307,6 +332,15 @@
 		69996BFC2023135000BE5F67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB3682FD2026AFD7003408D7 /* DSActModel.swift */,
+				AB3682FA2026AFD7003408D7 /* DSAdModel.swift */,
+				AB3682F92026AFD6003408D7 /* DSAdmobModel.swift */,
+				AB3682F82026AFD6003408D7 /* DSAlertModel.swift */,
+				AB3682FB2026AFD7003408D7 /* DSBannerModel.swift */,
+				AB3682FE2026AFD7003408D7 /* DSConfigModel.swift */,
+				AB3682F72026AFD6003408D7 /* DSHome.swift */,
+				AB3682FC2026AFD7003408D7 /* DSKdsModel.swift */,
+				AB3682FF2026AFD7003408D7 /* DSListModel.swift */,
 				69996BFD2023136900BE5F67 /* DSMovieModel.swift */,
 				69996BFF202313AB00BE5F67 /* DSHomeModel.swift */,
 				69996C012023188C00BE5F67 /* DSDataModel.swift */,
@@ -566,6 +600,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				69996C082023F6AB00BE5F67 /* UIView+Block.m in Sources */,
+				AB3683062026AFD7003408D7 /* DSActModel.swift in Sources */,
+				AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */,
+				AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */,
+				AB3683052026AFD7003408D7 /* DSKdsModel.swift in Sources */,
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
 				69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */,
 				69996C022023188C00BE5F67 /* DSDataModel.swift in Sources */,
@@ -574,15 +612,21 @@
 				69306A9D202463B900BDFAC8 /* UITableViewCell+String.swift in Sources */,
 				AB443C6720258AEA00720972 /* DSCollectSQLiteModel.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
+				AB3683072026AFD7003408D7 /* DSConfigModel.swift in Sources */,
 				69996BFE2023136900BE5F67 /* DSMovieModel.swift in Sources */,
+				ABB5B5B82026DDB300430C7B /* NSError+Message.m in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
 				69996BCD2020200500BE5F67 /* DSNavigationController.swift in Sources */,
 				69996C00202313AB00BE5F67 /* DSHomeModel.swift in Sources */,
 				69996BD12020348F00BE5F67 /* UIColor+Extension.swift in Sources */,
 				69996BF32022BA6100BE5F67 /* UINavigationController+FullscreenPopGesture.m in Sources */,
+				AB3683002026AFD7003408D7 /* DSHome.swift in Sources */,
+				AB3683032026AFD7003408D7 /* DSAdModel.swift in Sources */,
+				AB3683082026AFD7003408D7 /* DSListModel.swift in Sources */,
 				69996C15202457A900BE5F67 /* MBProgressHUD+iShare.m in Sources */,
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
+				AB3683042026AFD7003408D7 /* DSBannerModel.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
 				69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */,
 				69996BE1202074AD00BE5F67 /* DSPlayerController.swift in Sources */,

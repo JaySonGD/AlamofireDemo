@@ -13,7 +13,7 @@ import TFHpple
 
 class DSMovieViewModel: NSObject {
 
-    var homeModel : DSHomeModel?
+    var homeModel : DSHome?
     
     
     func getHtml()  {
@@ -53,16 +53,17 @@ class DSMovieViewModel: NSObject {
     func loadHomeData(success:@escaping ()->(),
                       failure:@escaping (_ error:String)->()) {
         
-        DSHttpManager.share.request(url: "http://api.ishare.bthost.top/",
+        DSHttpManager.share.request(url: "http://127.0.0.1/ishare/index.json",
                                     parameters: ["c":"movie","a":"home","debug":9],
                                     success: {[weak self] (obj) in
                                         
                                         let json = JSON(obj)
-                                        self?.homeModel = DSHomeModel(fromDictionary: json.dictionaryObject!)
+                                        self?.homeModel = DSHome(fromDictionary: json.dictionaryObject!)
                                         (success == nil) ? (): success()
                                         print(obj)
                                     }) { (error) in
-                                        (failure == nil) ? (): failure(error.localizedDescription)
+                                        let e = error as NSError
+                                        (failure == nil) ? (): failure(e.localizedFailureReason!)
                                         print(error)
                                     }
     }

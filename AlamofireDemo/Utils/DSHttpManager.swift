@@ -25,7 +25,7 @@ class DSHttpManager: NSObject {
         //配置 , 通常默认即可
         let config:URLSessionConfiguration = URLSessionConfiguration.default
         //设置超时时间为10S
-        config.timeoutIntervalForRequest = 10.0
+        config.timeoutIntervalForRequest = 5.0
         
         //根据config创建manager
         let manger = SessionManager(configuration: config)

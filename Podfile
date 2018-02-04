@@ -17,6 +17,8 @@ target 'AlamofireDemo' do
   pod 'MBProgressHUD'
   pod 'Kingfisher', '~> 4.6'
 #   pod 'RealmSwift' 
+  pod 'LYEmptyView'
+
 
 
 end

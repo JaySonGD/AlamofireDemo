@@ -25,11 +25,11 @@ class DSHomeCell: UITableViewCell {
         
         
     }
-    var model: DSMovieModel?{
+    var model: DSListModel?{
         didSet{
             nameLB.text = model?.name
-            desLB.text = model?.info
-            logoIV.kf.setImage(with: URL(string: (model?.logo)!))
+            desLB.text = model?.typeName
+            logoIV.kf.setImage(with: URL(string: (model?.img)!))
             collectBtn.isSelected = (model?.isSelected)!
         }
     }

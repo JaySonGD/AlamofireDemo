@@ -9,6 +9,7 @@
 import UIKit
 import SDCycleScrollView
 import MBProgressHUD
+import LYEmptyView
 
 class DSHomeController: DSBaseController {
 
@@ -37,6 +38,8 @@ class DSHomeController: DSBaseController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
+        tableView.y = NavbarHeight
+        tableView.height = kScreenHeight - NavbarHeight - SafeAreaBottomHeight
         tableView.tableHeaderView = banerView
         tableView.dataSource = self
         tableView.delegate = self
@@ -45,6 +48,16 @@ class DSHomeController: DSBaseController {
         let nib = UINib(nibName: DSHomeCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DSHomeCell.className)
         tableView.backgroundColor = DSConfig.viewBackgroundColor
+        
+        let emptyView = LYEmptyView.emptyActionView(withImageStr: "back", titleStr: "暂无更多数据", detailStr: "", btnTitleStr: "重新加载", btnClick: {[weak self] in
+            self?.loadHomeData()
+        })
+        
+        tableView.ly_emptyView = emptyView
+        emptyView?.actionBtnBackGroundColor = DSConfig.barTintColor;
+        emptyView?.actionBtnTitleColor = UIColor.white;
+        tableView.ly_emptyView.isHidden = true
+
         return tableView
     }()
     
@@ -55,9 +68,12 @@ class DSHomeController: DSBaseController {
         // Do any additional setup after loading the view.
         setUI()
         loadHomeData()
-
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tableView.y = 0
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,16 +81,17 @@ class DSHomeController: DSBaseController {
 
 }
 
+
 extension DSHomeController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.homeModel?.data.category.count ?? 0
+        return viewModel.homeModel?.list.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DSHomeCell.className) as! DSHomeCell
-        cell.backgroundColor = UIColor.random
-        cell.model = viewModel.homeModel?.data.category[indexPath.row]
+        //cell.backgroundColor = UIColor.random
+        cell.model = viewModel.homeModel?.list[indexPath.row]
         return cell
     }
     
@@ -95,20 +112,25 @@ extension DSHomeController{
         viewModel.loadHomeData(success: { [weak self] in
             
             let homeModel =  self?.viewModel.homeModel
-            let baners = homeModel?.data.banner
+            let baners = homeModel?.config.banner
             let urls = baners?.map({
-                URL(string: $0.bimg)
+                URL(string: $0.url)
             })
             let titles = baners?.map({
-                 $0.name
+                 $0.title
             })
 
             self?.banerView.imageURLStringsGroup = urls
             self?.banerView.titlesGroup = titles
             self?.tableView.reloadData()
             self?.view.hideLoading("载入成功")
+            self?.tableView.ly_endLoading()
+            (homeModel?.list.count != 0) ? () : (self?.tableView.ly_emptyView.isHidden = false)
+
         }) {[weak self] (msg) in
             self?.view.hideLoading(msg)
+            self?.tableView.ly_emptyView.titleStr = msg
+            self?.tableView.ly_emptyView.isHidden = false
         }
     }
 }

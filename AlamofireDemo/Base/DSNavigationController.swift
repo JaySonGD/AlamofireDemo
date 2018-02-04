@@ -51,7 +51,7 @@ class DSNavigationController: UINavigationController {
         let transition = CATransition()
         transition.duration = 0.5; // 动画时间
         transition.type = "pageUnCurl"; // 动画样式
-        transition.subtype = kCATransitionFromBottom; // 动画方向
+        transition.subtype = kCATransitionFromLeft; // 动画方向
         
         self.view.layer.add(transition, forKey: "kCATransition")
         /* 页面切换 */
@@ -60,15 +60,15 @@ class DSNavigationController: UINavigationController {
     
     override func popViewController(animated: Bool) -> UIViewController? {
         
-        /* 创建转场动画 */
-        let transition = CATransition()
-        transition.duration = 0.5; // 动画时间
-        transition.type = "pageCurl"; // 动画样式
-        transition.subtype = kCATransitionFromBottom; // 动画方向
-        
-        self.view.layer.add(transition, forKey: "kCATransition")
+//        /* 创建转场动画 */
+//        let transition = CATransition()
+//        transition.duration = 0.5; // 动画时间
+//        transition.type = "pageCurl"; // 动画样式
+//        transition.subtype = kCATransitionFromBottom; // 动画方向
+//
+//        self.view.layer.add(transition, forKey: "kCATransition")
         /* 页面切换 */
-        return super.popViewController(animated: false)
+        return super.popViewController(animated: animated)
     }
 
 }
@@ -91,6 +91,14 @@ extension DSNavigationController{
         
     }
     @objc fileprivate func back(){
-       let _ = popViewController(animated: true)
+                /* 创建转场动画 */
+                let transition = CATransition()
+                transition.duration = 0.5; // 动画时间
+                transition.type = "pageCurl"; // 动画样式
+                transition.subtype = kCATransitionFromLeft; // 动画方向
+        
+                self.view.layer.add(transition, forKey: "kCATransition")
+
+       let _ = popViewController(animated: false)
     }
 }
