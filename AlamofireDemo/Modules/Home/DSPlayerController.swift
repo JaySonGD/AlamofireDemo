@@ -37,9 +37,6 @@ class DSPlayerController: DSBaseController {
 //        super.viewDidDisappear(animated)
 //        navigationController?.setNavigationBarHidden(false, animated: false)
 //    }
-    override func viewDidDisappear(_ animated: Bool) {
-        su
-    }
     
 
 
