@@ -22,7 +22,7 @@ target 'AlamofireDemo' do
   pod 'HandyJSON','~> 4.0.0-beta.1'
   #pod 'MBProgressHUD'
   pod 'Kingfisher', '~> 4.6'
-  #pod 'RealmSwift'
+  pod 'RealmSwift'
   pod 'LYEmptyView'
   pod 'PLPlayerKit','2.4.3'
   pod 'Google-Mobile-Ads-SDK'

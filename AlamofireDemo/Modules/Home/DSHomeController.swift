@@ -80,8 +80,8 @@ class DSHomeController: DSBaseController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
-        tableView.y = NavbarHeight
-        tableView.height = kScreenHeight - NavbarHeight - SafeAreaBottomHeight
+        //tableView.y = NavbarHeight
+        //tableView.height = kScreenHeight - NavbarHeight - SafeAreaBottomHeight
         tableView.tableHeaderView = headerView
         tableView.dataSource = self
         tableView.delegate = self
@@ -109,12 +109,12 @@ class DSHomeController: DSBaseController {
 
         // Do any additional setup after loading the view.
         setUI()
-        loadHomeData()
+        loadHomeData() 
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        tableView.y = 0
+        tableView.height = kScreenHeight - NavbarHeight
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -24,7 +24,7 @@ class DSHomeModel : NSObject{
 		list = [DSListModel]()
 		if let listArray = dictionary["list"] as? [[String:Any]]{
 			for dic in listArray{
-				let value = DSListModel(fromDictionary: dic)
+				let value = DSListModel.fromDictionary(dictionary: dic)
 				list.append(value)
 			}
 		}

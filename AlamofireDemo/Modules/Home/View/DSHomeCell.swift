@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class DSHomeCell: UITableViewCell {
 
@@ -23,6 +24,15 @@ class DSHomeCell: UITableViewCell {
         model?.isSelected = !(model?.isSelected)!
         sender.isSelected = (model?.isSelected)!
         
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            let fmt = DateFormatter()
+            fmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            model?.date = fmt.string(from: Date())
+            realm.add(model!)
+        }
         
     }
     var model: DSListModel?{

@@ -197,7 +197,7 @@ extension DSProfileController:UITableViewDataSource,UITableViewDelegate{
 
 extension DSProfileController{
     @objc private func clloectClick(btn:UIButton){
-        btn.isSelected = !btn.isSelected
+        navigationController?.pushViewController(DSCollectController(), animated: true)
     }
 }
 

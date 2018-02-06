@@ -5,6 +5,8 @@
 
 #import <ZZCategory/ZZCategory.h>
 
+#import <PLPlayer.h>
+
 
 
 

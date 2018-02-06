@@ -134,10 +134,14 @@
                 //return [NSError errorWithDomain:@"NSURLErrorServerCertificateUntrusted" code:NSURLErrorServerCertificateUntrusted userInfo:nil];
                 break;
                 ///
-            case NSURLErrorFileOutsideSafeArea:
-                return @"在安全区域外文件";
-                //return [NSError errorWithDomain:@"NSURLErrorFileOutsideSafeArea" code:NSURLErrorFileOutsideSafeArea userInfo:nil];
-                break;
+//                if (@available(iOS 10.3, *)) {
+//                    case NSURLErrorFileOutsideSafeArea:
+//                    return @"在安全区域外文件";
+//                } else {
+//                    // Fallback on earlier versions
+//                }
+//                //return [NSError errorWithDomain:@"NSURLErrorFileOutsideSafeArea" code:NSURLErrorFileOutsideSafeArea userInfo:nil];
+//                break;
             case NSURLErrorDataLengthExceedsMaximum:
                 return @"数据长度超过最大值";
 

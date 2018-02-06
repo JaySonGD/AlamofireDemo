@@ -33,6 +33,9 @@
 		69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */; };
 		69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996C1720245F2A00BE5F67 /* DSHomeCell.swift */; };
 		69996C1A20245F2A00BE5F67 /* DSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69996C1820245F2A00BE5F67 /* DSHomeCell.xib */; };
+		69F3C3D0202996A1002FA24B /* DSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3CF202996A1002FA24B /* DSPlayer.swift */; };
+		69F3C3D52029A3EA002FA24B /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */; };
+		69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D62029AE53002FA24B /* DSCollectController.swift */; };
 		AB3683002026AFD7003408D7 /* DSHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F72026AFD6003408D7 /* DSHomeModel.swift */; };
 		AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F82026AFD6003408D7 /* DSAlertModel.swift */; };
 		AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F92026AFD6003408D7 /* DSAdmobModel.swift */; };
@@ -101,6 +104,10 @@
 		69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMovieViewModel.swift; sourceTree = "<group>"; };
 		69996C1720245F2A00BE5F67 /* DSHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeCell.swift; sourceTree = "<group>"; };
 		69996C1820245F2A00BE5F67 /* DSHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHomeCell.xib; sourceTree = "<group>"; };
+		69F3C3CF202996A1002FA24B /* DSPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPlayer.swift; sourceTree = "<group>"; };
+		69F3C3D32029A3EA002FA24B /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
+		69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		69F3C3D62029AE53002FA24B /* DSCollectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCollectController.swift; sourceTree = "<group>"; };
 		AB3682F62026AB45003408D7 /* index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		AB3682F72026AFD6003408D7 /* DSHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeModel.swift; sourceTree = "<group>"; };
 		AB3682F82026AFD6003408D7 /* DSAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAlertModel.swift; sourceTree = "<group>"; };
@@ -228,6 +235,7 @@
 		69996BEA2022B59D00BE5F67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				69F3C3CF202996A1002FA24B /* DSPlayer.swift */,
 				69996BD82020460B00BE5F67 /* DSConst.swift */,
 				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
 				69996BD6202044E900BE5F67 /* DSConfig.swift */,
@@ -243,6 +251,8 @@
 				69996BD22020365B00BE5F67 /* UIView+Extension.swift */,
 				69996BD42020404100BE5F67 /* UIFont+Extension.swift */,
 				69306A9C202463B900BDFAC8 /* UIView+String.swift */,
+				69F3C3D32029A3EA002FA24B /* NSObject+Extension.h */,
+				69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -274,6 +284,7 @@
 			children = (
 				69996BF62022E66200BE5F67 /* View */,
 				69996BF42022BC9A00BE5F67 /* DSProfileController.swift */,
+				69F3C3D62029AE53002FA24B /* DSCollectController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -577,6 +588,7 @@
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
 				AB3683072026AFD7003408D7 /* DSConfigModel.swift in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
+				69F3C3D0202996A1002FA24B /* DSPlayer.swift in Sources */,
 				69996BCD2020200500BE5F67 /* DSNavigationController.swift in Sources */,
 				69996BD12020348F00BE5F67 /* UIColor+Extension.swift in Sources */,
 				AB3683002026AFD7003408D7 /* DSHomeModel.swift in Sources */,
@@ -591,8 +603,10 @@
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
 				ABB5B5C12026FF5C00430C7B /* DSPlayerController.swift in Sources */,
 				ABB5B5BD2026F6FE00430C7B /* DSCategoryCell.swift in Sources */,
+				69F3C3D52029A3EA002FA24B /* NSObject+Extension.m in Sources */,
 				69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */,
 				69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */,
+				69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,6 +776,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = AlamofireDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -781,6 +796,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = AlamofireDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
