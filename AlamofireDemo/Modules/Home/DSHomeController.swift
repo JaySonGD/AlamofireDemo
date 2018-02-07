@@ -61,7 +61,7 @@ class DSHomeController: DSBaseController {
 
         collectionView.register(UINib(nibName: DSCategoryCell.className, bundle: nil), forCellWithReuseIdentifier: DSCategoryCell.className)
 //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.className)
-//        collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = DSConfig.viewBackgroundColor
@@ -127,7 +127,7 @@ class DSHomeController: DSBaseController {
 
 }
 // MARK: - <UICollectionViewDataSource>
-extension DSHomeController: UICollectionViewDataSource{
+extension DSHomeController: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.homeModel?.config.category.count ?? 0
     }
@@ -135,6 +135,11 @@ extension DSHomeController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DSCategoryCell.className, for: indexPath) as! DSCategoryCell
         cell.model = viewModel.homeModel?.config.category[indexPath.item]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = viewModel.homeModel?.config.category[indexPath.item]
+        self.openURL(str: model?.url,type: .present)
     }
 }
 // MARK: - <UITableViewDelegate>

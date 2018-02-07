@@ -36,6 +36,8 @@
 		69F3C3D0202996A1002FA24B /* DSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3CF202996A1002FA24B /* DSPlayer.swift */; };
 		69F3C3D52029A3EA002FA24B /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */; };
 		69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D62029AE53002FA24B /* DSCollectController.swift */; };
+		69F3C3D9202AEFC9002FA24B /* String+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D8202AEFC9002FA24B /* String+UIViewController.swift */; };
+		69F3C3DB202AF503002FA24B /* DSRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3DA202AF503002FA24B /* DSRouter.swift */; };
 		AB3683002026AFD7003408D7 /* DSHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F72026AFD6003408D7 /* DSHomeModel.swift */; };
 		AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F82026AFD6003408D7 /* DSAlertModel.swift */; };
 		AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F92026AFD6003408D7 /* DSAdmobModel.swift */; };
@@ -108,6 +110,8 @@
 		69F3C3D32029A3EA002FA24B /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
 		69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
 		69F3C3D62029AE53002FA24B /* DSCollectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCollectController.swift; sourceTree = "<group>"; };
+		69F3C3D8202AEFC9002FA24B /* String+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UIViewController.swift"; sourceTree = "<group>"; };
+		69F3C3DA202AF503002FA24B /* DSRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSRouter.swift; sourceTree = "<group>"; };
 		AB3682F62026AB45003408D7 /* index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		AB3682F72026AFD6003408D7 /* DSHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeModel.swift; sourceTree = "<group>"; };
 		AB3682F82026AFD6003408D7 /* DSAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAlertModel.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
 				69996BD6202044E900BE5F67 /* DSConfig.swift */,
 				69996BEB2022B5D000BE5F67 /* Category */,
+				69F3C3DA202AF503002FA24B /* DSRouter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				69306A9C202463B900BDFAC8 /* UIView+String.swift */,
 				69F3C3D32029A3EA002FA24B /* NSObject+Extension.h */,
 				69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */,
+				69F3C3D8202AEFC9002FA24B /* String+UIViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */,
 				AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */,
 				AB3683052026AFD7003408D7 /* DSKdsModel.swift in Sources */,
+				69F3C3DB202AF503002FA24B /* DSRouter.swift in Sources */,
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
 				ABB5B5BA2026ECEF00430C7B /* DSCategoryModel.swift in Sources */,
 				69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */,
@@ -598,6 +605,7 @@
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				AB3683042026AFD7003408D7 /* DSBannerModel.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
+				69F3C3D9202AEFC9002FA24B /* String+UIViewController.swift in Sources */,
 				69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,

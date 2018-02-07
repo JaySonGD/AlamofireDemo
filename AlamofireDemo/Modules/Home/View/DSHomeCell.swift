@@ -18,6 +18,7 @@ class DSHomeCell: UITableViewCell {
     @IBOutlet weak var collectBtn: UIButton!
     @IBOutlet weak var desLB: UILabel!
     @IBOutlet weak var logoIV: UIImageView!
+    @IBOutlet weak var historyLB: UIButton!
     
     @IBAction func collectClick(_ sender: UIButton) {
         
@@ -64,6 +65,7 @@ class DSHomeCell: UITableViewCell {
         // Initialization code
         radiuContentView.layerCornerRadius(radiu: 10.0)
         logoIV.layerCornerRadius(radiu: 6.0)
+        historyLB.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

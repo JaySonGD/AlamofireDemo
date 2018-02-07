@@ -10,6 +10,12 @@ import UIKit
 import Alamofire
 import LYEmptyView
 
+enum DSTypeMethod: String {
+    case push     = "Push"
+    case present    = "Present"
+}
+
+
 class DSBaseController: UIViewController {
 
     
@@ -58,6 +64,55 @@ class DSBaseController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return  .lightContent
     }
+    
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key)
+    }
+}
+
+extension DSBaseController{
+    
+    
+    func openURL(str:String?,type:DSTypeMethod = .push) {
+        guard  (str != nil) else {return}
+        guard let url = URL(string: str!) else {return}
+        
+        if  (url.scheme == "app") {
+            
+            let urlString = url.query
+            var params : [String:Any] = [:]
+            for param in (urlString?.components(separatedBy: "&"))!{
+                let elts = param.components(separatedBy: "=")
+                if elts.count < 2 {
+                    continue
+                }
+                params[elts.first!] = elts.last
+            }
+            //let actionName = url.path.replacingOccurrences(of: "/", with: "")
+            let targetName = url.host
+            
+            guard let vc = targetName?.toViewController() else{
+                return
+            }
+            //let action = NSSelectorFromString(actionName!)
+            
+            vc.setValuesForKeys(params)
+            
+            if type == .push {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                self.present(DSNavigationController(rootViewController: vc), animated: true, completion: nil)
+            }
+            
+            print(params)
+        }else{
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+
 }
 
 extension DSBaseController{

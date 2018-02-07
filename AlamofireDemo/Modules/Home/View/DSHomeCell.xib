@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-WF-KLO">
-                                <rect key="frame" x="68" y="26.666666666666664" width="35.666666666666671" height="17"/>
+                                <rect key="frame" x="68" y="26.666666666666664" width="35.666666666666657" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="之前都是使用2017.2.27的方法，版本是2017.1.1，还没提示过期，但是根据评论说这个链接已经失效了，评论也给出了个新地址：http://idea.iteblog.com/key.php" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwd-Zf-fUM">
-                                <rect key="frame" x="8" y="74.666666666666686" width="344" height="29.333333333333329"/>
+                                <rect key="frame" x="8" y="74.666666666666671" width="344" height="29.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -60,6 +60,18 @@
                                     <constraint firstAttribute="height" constant="1" id="Kom-Li-MGv"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2T-cQ-kzW">
+                                <rect key="frame" x="64" y="50" width="120" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Qz7-kY-YUI"/>
+                                    <constraint firstAttribute="height" constant="12" id="nqt-aL-1xE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="2017/12/23 09:08:05" image="history_small">
+                                    <color key="titleColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -71,11 +83,13 @@
                             <constraint firstItem="849-eo-fio" firstAttribute="leading" secondItem="9dN-hN-IEj" secondAttribute="leading" constant="6" id="AhM-N8-FLm"/>
                             <constraint firstItem="849-eo-fio" firstAttribute="top" secondItem="FMP-FO-YtR" secondAttribute="bottom" constant="6" id="Eda-7m-H1t"/>
                             <constraint firstAttribute="trailing" secondItem="1le-Se-ZOK" secondAttribute="trailing" constant="8" id="NHQ-0y-6la"/>
+                            <constraint firstItem="c2T-cQ-kzW" firstAttribute="bottom" secondItem="FMP-FO-YtR" secondAttribute="bottom" id="Top-va-pce"/>
                             <constraint firstAttribute="trailing" secondItem="Dwd-Zf-fUM" secondAttribute="trailing" constant="8" id="W7G-zl-zeH"/>
                             <constraint firstAttribute="trailing" secondItem="849-eo-fio" secondAttribute="trailing" constant="6" id="jgX-pU-hta"/>
                             <constraint firstItem="1le-Se-ZOK" firstAttribute="top" secondItem="9dN-hN-IEj" secondAttribute="top" constant="8" id="kOp-EO-mcS"/>
                             <constraint firstItem="e0l-WF-KLO" firstAttribute="centerY" secondItem="FMP-FO-YtR" secondAttribute="centerY" id="oZ0-Mp-OZ3"/>
                             <constraint firstItem="e0l-WF-KLO" firstAttribute="leading" secondItem="FMP-FO-YtR" secondAttribute="trailing" constant="6" id="sEW-nB-Bjt"/>
+                            <constraint firstItem="c2T-cQ-kzW" firstAttribute="leading" secondItem="e0l-WF-KLO" secondAttribute="leading" constant="-4" id="yne-xk-pf3"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -91,15 +105,17 @@
             <connections>
                 <outlet property="collectBtn" destination="1le-Se-ZOK" id="wLm-PF-LOI"/>
                 <outlet property="desLB" destination="Dwd-Zf-fUM" id="HLf-1A-qms"/>
+                <outlet property="historyLB" destination="c2T-cQ-kzW" id="40x-o3-rkS"/>
                 <outlet property="logoIV" destination="FMP-FO-YtR" id="pyn-JO-sfB"/>
                 <outlet property="nameLB" destination="e0l-WF-KLO" id="dfq-IF-XA2"/>
                 <outlet property="radiuContentView" destination="9dN-hN-IEj" id="Daf-3B-imQ"/>
             </connections>
-            <point key="canvasLocation" x="98" y="87.5"/>
+            <point key="canvasLocation" x="98" y="87"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="clloect" width="24" height="24"/>
         <image name="clloect_select" width="24" height="24"/>
+        <image name="history_small" width="12" height="12"/>
     </resources>
 </document>
