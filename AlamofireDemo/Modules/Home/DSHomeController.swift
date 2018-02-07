@@ -10,8 +10,11 @@ import UIKit
 import SDCycleScrollView
 import MBProgressHUD
 import LYEmptyView
+import RealmSwift
 
 class DSHomeController: DSBaseController {
+    
+    // MARK: - <懒加载>
     lazy var viewModel = DSMovieViewModel()
 
     lazy var player: UIBarButtonItem = {
@@ -104,6 +107,7 @@ class DSHomeController: DSBaseController {
     }()
     
     
+    // MARK: - <生命周期>
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -122,6 +126,7 @@ class DSHomeController: DSBaseController {
     }
 
 }
+// MARK: - <UICollectionViewDataSource>
 extension DSHomeController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.homeModel?.config.category.count ?? 0
@@ -132,6 +137,7 @@ extension DSHomeController: UICollectionViewDataSource{
         return cell
     }
 }
+// MARK: - <UITableViewDelegate>
 
 extension DSHomeController: UITableViewDelegate,UITableViewDataSource{
     
@@ -148,15 +154,28 @@ extension DSHomeController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let newModel = (viewModel.homeModel?.list[indexPath.row]) else { return }
+        DSPlayer.share.play(model: newModel)
+   
+        let fmt = DateFormatter()
+        fmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        newModel.date = fmt.string(from: Date())
+            
+        let realm = try! Realm()
+        try! realm.write {
+                let dict = newModel.toDictionary()
+                let historyModel = DSListModel.fromDictionary(dictionary: dict)
+                realm.add(historyModel, update: true)
+        }
     }
 }
-
+// MARK: - <SDCycleScrollViewDelegate>
 extension DSHomeController:SDCycleScrollViewDelegate{
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
         print(index)
     }
 }
-
+// MARK: - <网络请求>
 extension DSHomeController{
     fileprivate func loadHomeData(){
         view.showLoading()
@@ -192,7 +211,7 @@ extension DSHomeController{
         }
     }
 }
-
+// MARK: - <事件处理>
 extension DSHomeController{
     @objc private func playerClick(){
         navigationController?.pushViewController(DSPlayerController(), animated: true)
@@ -203,13 +222,28 @@ extension DSHomeController{
         navigationController?.pushViewController(DSProfileController(), animated: true)
     }
 }
-
+// MARK: - <自定义方法>
 extension DSHomeController{
     private func setUI() {
         navigationItem.leftBarButtonItem = profileItem
         navigationItem.title = "港澳通"
         view.backgroundColor = DSConfig.viewBackgroundColor
         navigationItem.rightBarButtonItem = player
+        
+//        noMoreDataImage = "back"
+//        noMoreDataTitle = "暂无更多数据"
+//        noMoreDataActionTitle = "重新加载"
+//        noMoreDataAction = {[weak self] in
+//            self?.loadHomeData()
+//        }
+//
+//        initTableView(dataSource: self,
+//                      delegate: self,
+//                      rowHeight: 130,
+//                      cellClass: DSHomeCell.self)
+//        tableView.tableHeaderView = headerView
+//        tableView.y = NavbarHeight
+//        tableView.height = kScreenHeight - NavbarHeight - SafeAreaBottomHeight
 
     }
 }

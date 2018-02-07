@@ -31,7 +31,7 @@ struct DSConfig {
         get{return UIFont.systemFont(ofSize: 12.0)}
     }
     static var navigationBarTitleFont: UIFont {
-        get{return UIFont.systemFont(ofSize: 24.0)}
+        get{return UIFont.systemFont(ofSize: 18.0)}
     }
 
 }

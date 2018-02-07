@@ -3,6 +3,7 @@
 
 import UIKit
 
+
 extension UIView {
     var width: CGFloat {
         get { return self.frame.size.width }
@@ -113,5 +114,20 @@ extension UIView {
         layer.cornerRadius = radiu;
         layer.masksToBounds = true;
     }
+    
+    class func loadFromNib() -> UIView? {
+        
+        do{
+            let views = try Bundle.main.loadNibNamed(self.className, owner: nil, options: nil)
+        }
+        catch{
+            print(error)
+        }
+        
+        let views = Bundle.main.loadNibNamed(self.className, owner: nil, options: nil)
+        
+        return Bundle.main.loadNibNamed(self.className, owner: nil, options: nil)?.first as? UIView
+    }
+
 }
 

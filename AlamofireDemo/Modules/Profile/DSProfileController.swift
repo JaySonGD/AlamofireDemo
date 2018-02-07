@@ -107,7 +107,7 @@ class DSProfileController: DSBaseController {
         tableView.showsVerticalScrollIndicator = false
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.className)
         tableView.tableFooterView = footerLabel
         return tableView
     }()
@@ -171,7 +171,7 @@ extension DSProfileController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className)
         cell?.accessoryType = .disclosureIndicator
         let dict = datas[indexPath.section][indexPath.row]
         cell?.textLabel?.text = dict["title"] as? String
@@ -204,7 +204,21 @@ extension DSProfileController{
 extension DSProfileController{
     private func setUI() {
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = DSConfig.viewBackgroundColor
         view.addSubview(tableView)
+//        initTableView(dataSource: self,
+//                      delegate: self,
+//                      rowHeight: 54,
+//                      formNiB: false,
+//                      separatorStyle: .singleLine,
+//                      showsVerticalScrollIndicator: false,
+//                      cellClass: UITableViewCell.self)
+//
+//        tableView.y = -NavbarHeight
+//        tableView.height = kScreenHeight + NavbarHeight
+//        tableView.tableHeaderView = headView
+//        tableView.tableFooterView = footerLabel
+
+        
     }
 }

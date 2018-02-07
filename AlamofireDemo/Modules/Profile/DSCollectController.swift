@@ -29,16 +29,16 @@ class DSCollectController: DSBaseController {
         let nib = UINib(nibName: DSHomeCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DSHomeCell.className)
         tableView.backgroundColor = DSConfig.viewBackgroundColor
-        
+
         let emptyView = LYEmptyView.emptyActionView(withImageStr: "back", titleStr: "暂无更多数据", detailStr: "", btnTitleStr: "我要收藏", btnClick: {[weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            self?.navigationController?.popToRootViewController(animated:true)
         })
-        
+
         tableView.ly_emptyView = emptyView
         emptyView?.actionBtnBackGroundColor = DSConfig.barTintColor;
         emptyView?.actionBtnTitleColor = UIColor.white;
         tableView.ly_emptyView.isHidden = true
-        
+
         return tableView
     }()
 
@@ -60,8 +60,19 @@ class DSCollectController: DSBaseController {
 // MARK: - <自定义方法>
 extension DSCollectController{
     func setUI()  {
+        
         navigationItem.title = "收藏"
         view.addSubview(tableView)
+//        noMoreDataImage = "back"
+//        noMoreDataTitle = "暂无更多数据"
+//        noMoreDataActionTitle = "我要收藏"
+//        noMoreDataAction = {[weak self] in
+//            self?.navigationController?.popToRootViewController(animated:true)
+//        }
+//        initTableView(dataSource: self,
+//                      delegate: self,
+//                      rowHeight: 130,
+//                      cellClass: DSHomeCell.self)
     }
     
 }

@@ -17,7 +17,8 @@ class DSMovieViewModel: NSObject {
 
     var homeModel : DSHomeModel?
     var collectModels : [DSListModel]?
-    
+    var historyModels : [DSListModel]?
+
 //    func getHtml()  {
 //
 //
@@ -56,16 +57,18 @@ class DSMovieViewModel: NSObject {
 
 
 extension DSMovieViewModel{
-    func loadCollectModes() {
+    func loadCollectModes(isCollected:Bool = true) {
         let rel = try! Realm()
-        let lists  = rel.objects(DSListModel.self)
+
+        
+        let lists  = rel.objects(DSListModel.self).filter("isSelected = %d",isCollected)
         
         var array : [DSListModel] = []
         
         for list in lists.enumerated() {
             array.append(list.element)
         }
-        collectModels = array
+        isCollected ?  (collectModels = array) : (historyModels = array)
         
         print(lists)
 

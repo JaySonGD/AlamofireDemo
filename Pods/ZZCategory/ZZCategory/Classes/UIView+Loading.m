@@ -7,7 +7,7 @@
 //
 
 #import "UIView+Loading.h"
-//#import "MBProgressHUD+iShare.h"
+#import "MBProgressHUD+iShare.h"
 #import <objc/runtime.h>
 
 static char ACTIVITY_INDICATOR_KEY;
@@ -62,7 +62,7 @@ static char ACTIVITY_INDICATOR_KEY;
 {
     [self removeLoading];
     if (msg.length) {
-        //[MBProgressHUD MB_showText:msg toView:self];
+        [MBProgressHUD MB_showText:msg toView:self];
     }
 }
 

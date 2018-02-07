@@ -21,7 +21,7 @@ PODS:
   - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
   - TFHpple (2.0.0)
-  - ZZCategory (0.1.4):
+  - ZZCategory (0.1.5):
     - MBProgressHUD
 
 DEPENDENCIES:
@@ -36,7 +36,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON
   - TFHpple
-  - ZZCategory
+  - ZZCategory (= 0.1.5)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -54,8 +54,8 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
-  ZZCategory: ae78f7b4fe08e46b9370a5a6827eee62a6428380
+  ZZCategory: c4a53b0d8db1e1c2813f867a53b3fae99951662e
 
-PODFILE CHECKSUM: a8d25d8162d0c79cca22a1d247eb30c564242eda
+PODFILE CHECKSUM: b655ca0a56ce9b082410558f75ab7c9c05fbfcba
 
 COCOAPODS: 1.4.0

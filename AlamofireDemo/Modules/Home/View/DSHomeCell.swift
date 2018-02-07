@@ -21,22 +21,37 @@ class DSHomeCell: UITableViewCell {
     
     @IBAction func collectClick(_ sender: UIButton) {
         
+        
         model?.isSelected = !(model?.isSelected)!
         sender.isSelected = (model?.isSelected)!
         
-        
+        let fmt = DateFormatter()
+        fmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        model?.date = fmt.string(from: Date())
+
+
         let realm = try! Realm()
-        
         try! realm.write {
-            let fmt = DateFormatter()
-            fmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            model?.date = fmt.string(from: Date())
-            realm.add(model!)
+            let dict = model?.toDictionary()
+            
+            let clloectModel = DSListModel.fromDictionary(dictionary: dict!)
+            realm.add(clloectModel, update: true)
+            if !(clloectModel.isSelected) {
+                realm.delete(clloectModel)
+            }
+            print(Thread.current)
         }
         
     }
     var model: DSListModel?{
         didSet{
+            if !(model?.isSelected)! {
+                let realm = try! Realm()
+                if let rModel = realm.object(ofType: DSListModel.self, forPrimaryKey: model?.m3u8) {
+                    model?.isSelected = rModel.isSelected
+                }
+            }
+            
             nameLB.text = model?.name
             desLB.text = model?.typeName
             logoIV.kf.setImage(with: URL(string: (model?.img)!))

@@ -48,7 +48,47 @@ class DSListModel : Object{
         if let typeNameValue = dictionary["typeName"] as? String{
             this.typeName = typeNameValue
         }
+        
+        if let isSelected = dictionary["isSelected"] as? Bool{
+            this.isSelected = isSelected
+        }
+        if let date = dictionary["date"] as? String{
+            this.date = date
+        }
+
+        
         return this
+    }
+    
+    func toDictionary() -> [String:Any]
+    {
+        var dictionary = [String:Any]()
+        if img != nil{
+            dictionary["img"] = img
+        }
+        dictionary["isShow"] = isShow
+        if m3u8 != nil{
+            dictionary["m3u8"] = m3u8
+        }
+        if name != nil{
+            dictionary["name"] = name
+        }
+        if typeName != nil{
+            dictionary["typeName"] = typeName
+        }
+        dictionary["isSelected"] = isSelected
+        if date != nil{
+            dictionary["date"] = date
+        }
+
+        return dictionary
+    }
+
+    
+    
+    override class func primaryKey() -> String? {
+        
+        return "m3u8"
     }
     
 
