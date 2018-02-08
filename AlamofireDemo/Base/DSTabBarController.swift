@@ -30,18 +30,18 @@ class DSTabBarController: UITabBarController {
         return (selectedViewController?.childViewControllers.last?.preferredStatusBarStyle) ?? .lightContent
     }
     
-    override var shouldAutorotate: Bool{
-        return (selectedViewController?.childViewControllers.last?.shouldAutorotate) ?? false
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-        
-        return (selectedViewController?.childViewControllers.last?.supportedInterfaceOrientations) ?? .portrait
-    }
-    
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
-        return (selectedViewController?.childViewControllers.last?.preferredInterfaceOrientationForPresentation) ?? .portrait
-    }
+//    override var shouldAutorotate: Bool{
+//        return (selectedViewController?.childViewControllers.last?.shouldAutorotate) ?? false
+//    }
+//    
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+//        
+//        return (selectedViewController?.childViewControllers.last?.supportedInterfaceOrientations) ?? .portrait
+//    }
+//    
+//    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+//        return (selectedViewController?.childViewControllers.last?.preferredInterfaceOrientationForPresentation) ?? .portrait
+//    }
 
     
     
