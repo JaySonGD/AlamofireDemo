@@ -162,7 +162,8 @@ extension DSPlayViewController{
         self.automaticallyAdjustsScrollViewInsets = false
         view.addSubview(playView)
         playView.snp.makeConstraints { (make) -> Void in
-            make.right.left.top.equalTo(view).offset(view.safeAreaInsets)
+            make.right.left.top.equalTo(view)
+            make.top.equalTo(view).offset(NavbarHeight)
             make.height.equalTo(9 * kScreenWidth / 16.0)
         }
 
