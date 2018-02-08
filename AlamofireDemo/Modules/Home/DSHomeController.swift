@@ -139,7 +139,7 @@ extension DSHomeController: UICollectionViewDataSource,UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = viewModel.homeModel?.config.category[indexPath.item]
-        self.openURL(str: model?.url,type: .present)
+        self.openURL(str: model?.url,type: .push)
     }
 }
 // MARK: - <UITableViewDelegate>

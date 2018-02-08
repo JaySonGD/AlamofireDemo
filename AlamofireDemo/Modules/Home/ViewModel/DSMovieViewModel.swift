@@ -18,6 +18,11 @@ class DSMovieViewModel: NSObject {
     var homeModel : DSHomeModel?
     var collectModels : [DSListModel]?
     var historyModels : [DSListModel]?
+    
+    var provinceModels : [DS91KDSModel]?
+    var cityModels : [DS91KDSModel]?
+//    var playModels : DS91PlayModel?
+
 
 //    func getHtml()  {
 //
@@ -55,6 +60,99 @@ class DSMovieViewModel: NSObject {
     
 }
 
+extension DSMovieViewModel{
+    
+    
+    func getM3u8(url:String,
+                 success:@escaping (String)->(),
+                 failure:@escaping (_ error:String)->()) {
+        DSKT.getPayURL(withBaseURL: url, success: { (m3u8) in
+            
+            guard (m3u8 != nil) else {
+                DispatchQueue.main.async {
+                    (failure == nil) ? (): failure("无法获取连接")
+                }
+
+                return
+            }
+            
+            DispatchQueue.main.async {
+                (success == nil) ? (): success(m3u8!)
+            }
+
+        }) { (error) in
+            let e = error! as NSError
+            DispatchQueue.main.async {
+                (failure == nil) ? (): failure(e.localizedFailureReason!)
+            }
+
+        }
+    }
+    
+    func loadPlay(cityURL:String ,success:@escaping (DS91PlayModel)->())  {
+        DSKT.getOneChannelKDSModel(withUrl: cityURL) { (obj) in
+            guard let dic:[String:Any] = obj as? [String : Any] else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                (success == nil) ? (): success(DS91PlayModel(fromDictionary: dic))
+            }
+
+        }
+    }
+    
+    
+    func loadCity(cityURL:String ,success:@escaping ()->()) {
+
+        
+        DSKT.getOneProvinceAllKDSModel(withUrl: cityURL) {[weak self] (obj) in
+            
+            guard let array:[[String:Any]] = obj as? [[String : Any]] else {
+                return
+            }
+            
+            var models:[DS91KDSModel] = []
+            for dic in array{
+                models.append(DS91KDSModel(fromDictionary: dic))
+            }
+            
+            self?.cityModels = models
+            DispatchQueue.main.async {
+                (success == nil) ? (): success()
+            }
+
+        }
+        
+    }
+
+    
+    func loadProvince(success:@escaping ()->()) {
+        DSKT.getAll91_KDSModelSucess { [weak self] (obj) in
+            
+            
+            
+            
+            guard let array:[[String:Any]] = obj as? [[String : Any]] else {
+                return
+            }
+            
+            var models:[DS91KDSModel] = []
+            for dic in array{
+                models.append(DS91KDSModel(fromDictionary: dic))
+            }
+            
+            self?.provinceModels = models
+            DispatchQueue.main.async {
+                (success == nil) ? (): success()
+            }
+
+        }
+
+    }
+    
+}
+
 
 extension DSMovieViewModel{
     func loadCollectModes(isCollected:Bool = true) {
@@ -79,7 +177,7 @@ extension DSMovieViewModel{
     func loadHomeData(success:@escaping ()->(),
                       failure:@escaping (_ error:String)->()) {
         
-        DSHttpManager.share.request(url: "http://127.0.0.1/index.json",
+        DSHttpManager.share.request(url: "http://169.254.81.183/index.json",
                                     parameters: ["c":"movie","a":"home","debug":9],
                                     success: {[weak self] (obj) in
                                         

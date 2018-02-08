@@ -38,6 +38,13 @@
 		69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D62029AE53002FA24B /* DSCollectController.swift */; };
 		69F3C3D9202AEFC9002FA24B /* String+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D8202AEFC9002FA24B /* String+UIViewController.swift */; };
 		69F3C3DB202AF503002FA24B /* DSRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3DA202AF503002FA24B /* DSRouter.swift */; };
+		69F3C3E0202BDE27002FA24B /* DSWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3DF202BDE27002FA24B /* DSWebController.swift */; };
+		69F3C3E3202BEAEA002FA24B /* DSHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3E1202BEAEA002FA24B /* DSHTML.m */; };
+		69F3C3E6202BEB4F002FA24B /* DSKT.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3E4202BEB4E002FA24B /* DSKT.m */; };
+		69F3C3E9202BFCFF002FA24B /* DS91KDSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3E8202BFCFF002FA24B /* DS91KDSModel.swift */; };
+		69F3C3EB202BFD6E002FA24B /* DS91PlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3EA202BFD6E002FA24B /* DS91PlayModel.swift */; };
+		69F3C3ED202BFDF5002FA24B /* DSKDSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3EC202BFDF5002FA24B /* DSKDSController.swift */; };
+		69F3C3EF202C23D3002FA24B /* DSWKController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3EE202C23D3002FA24B /* DSWKController.swift */; };
 		AB3683002026AFD7003408D7 /* DSHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F72026AFD6003408D7 /* DSHomeModel.swift */; };
 		AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F82026AFD6003408D7 /* DSAlertModel.swift */; };
 		AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3682F92026AFD6003408D7 /* DSAdmobModel.swift */; };
@@ -112,6 +119,16 @@
 		69F3C3D62029AE53002FA24B /* DSCollectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCollectController.swift; sourceTree = "<group>"; };
 		69F3C3D8202AEFC9002FA24B /* String+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UIViewController.swift"; sourceTree = "<group>"; };
 		69F3C3DA202AF503002FA24B /* DSRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSRouter.swift; sourceTree = "<group>"; };
+		69F3C3DF202BDE27002FA24B /* DSWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWebController.swift; sourceTree = "<group>"; };
+		69F3C3E1202BEAEA002FA24B /* DSHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSHTML.m; sourceTree = "<group>"; };
+		69F3C3E2202BEAEA002FA24B /* DSHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSHTML.h; sourceTree = "<group>"; };
+		69F3C3E4202BEB4E002FA24B /* DSKT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSKT.m; sourceTree = "<group>"; };
+		69F3C3E5202BEB4E002FA24B /* DSKT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSKT.h; sourceTree = "<group>"; };
+		69F3C3E7202BEC6A002FA24B /* AlamofireDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlamofireDemo.pch; path = AlamofireDemo/AlamofireDemo.pch; sourceTree = "<group>"; };
+		69F3C3E8202BFCFF002FA24B /* DS91KDSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DS91KDSModel.swift; sourceTree = "<group>"; };
+		69F3C3EA202BFD6E002FA24B /* DS91PlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DS91PlayModel.swift; sourceTree = "<group>"; };
+		69F3C3EC202BFDF5002FA24B /* DSKDSController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSKDSController.swift; sourceTree = "<group>"; };
+		69F3C3EE202C23D3002FA24B /* DSWKController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWKController.swift; sourceTree = "<group>"; };
 		AB3682F62026AB45003408D7 /* index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		AB3682F72026AFD6003408D7 /* DSHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeModel.swift; sourceTree = "<group>"; };
 		AB3682F82026AFD6003408D7 /* DSAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAlertModel.swift; sourceTree = "<group>"; };
@@ -162,6 +179,7 @@
 		69996B8B20200BEC00BE5F67 = {
 			isa = PBXGroup;
 			children = (
+				69F3C3E7202BEC6A002FA24B /* AlamofireDemo.pch */,
 				69996B9620200BEC00BE5F67 /* AlamofireDemo */,
 				69996BAB20200BED00BE5F67 /* AlamofireDemoTests */,
 				69996BB620200BED00BE5F67 /* AlamofireDemoUITests */,
@@ -239,6 +257,10 @@
 		69996BEA2022B59D00BE5F67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				69F3C3E5202BEB4E002FA24B /* DSKT.h */,
+				69F3C3E4202BEB4E002FA24B /* DSKT.m */,
+				69F3C3E2202BEAEA002FA24B /* DSHTML.h */,
+				69F3C3E1202BEAEA002FA24B /* DSHTML.m */,
 				69F3C3CF202996A1002FA24B /* DSPlayer.swift */,
 				69996BD82020460B00BE5F67 /* DSConst.swift */,
 				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
@@ -273,6 +295,9 @@
 				69996BEF2022B9D200BE5F67 /* DSHomeController.swift */,
 				ABB5B5BF2026FF5C00430C7B /* DSPlayerController.swift */,
 				ABB5B5C02026FF5C00430C7B /* DSPlayerController.xib */,
+				69F3C3DF202BDE27002FA24B /* DSWebController.swift */,
+				69F3C3EC202BFDF5002FA24B /* DSKDSController.swift */,
+				69F3C3EE202C23D3002FA24B /* DSWKController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -324,6 +349,8 @@
 				AB3682FC2026AFD7003408D7 /* DSKdsModel.swift */,
 				AB3682FF2026AFD7003408D7 /* DSListModel.swift */,
 				ABB5B5B92026ECEF00430C7B /* DSCategoryModel.swift */,
+				69F3C3E8202BFCFF002FA24B /* DS91KDSModel.swift */,
+				69F3C3EA202BFD6E002FA24B /* DS91PlayModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,9 +617,11 @@
 				ABB5B5BA2026ECEF00430C7B /* DSCategoryModel.swift in Sources */,
 				69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */,
 				69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */,
+				69F3C3E6202BEB4F002FA24B /* DSKT.m in Sources */,
 				69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */,
 				69306A9D202463B900BDFAC8 /* UIView+String.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
+				69F3C3ED202BFDF5002FA24B /* DSKDSController.swift in Sources */,
 				AB3683072026AFD7003408D7 /* DSConfigModel.swift in Sources */,
 				69996B9A20200BEC00BE5F67 /* ViewController.swift in Sources */,
 				69F3C3D0202996A1002FA24B /* DSPlayer.swift in Sources */,
@@ -602,9 +631,12 @@
 				AB3683032026AFD7003408D7 /* DSAdModel.swift in Sources */,
 				AB3683082026AFD7003408D7 /* DSListModel.swift in Sources */,
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
+				69F3C3E0202BDE27002FA24B /* DSWebController.swift in Sources */,
+				69F3C3E9202BFCFF002FA24B /* DS91KDSModel.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				AB3683042026AFD7003408D7 /* DSBannerModel.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
+				69F3C3EF202C23D3002FA24B /* DSWKController.swift in Sources */,
 				69F3C3D9202AEFC9002FA24B /* String+UIViewController.swift in Sources */,
 				69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
@@ -615,6 +647,8 @@
 				69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */,
 				69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */,
 				69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */,
+				69F3C3E3202BEAEA002FA24B /* DSHTML.m in Sources */,
+				69F3C3EB202BFD6E002FA24B /* DS91PlayModel.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,13 +817,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = ZQ33CDZ87Y;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = AlamofireDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlamofireDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlamofireDemo.kds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AlamofireDemo/AlamofireDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -803,13 +841,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = ZQ33CDZ87Y;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = AlamofireDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlamofireDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlamofireDemo.kds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AlamofireDemo/AlamofireDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

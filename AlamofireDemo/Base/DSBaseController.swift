@@ -107,9 +107,23 @@ extension DSBaseController{
             
             print(params)
         }else{
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url)
+//            if UIApplication.shared.canOpenURL(url) {
+//                UIApplication.shared.openURL(url)
+//            }
+            
+            let web = DSWebController(url: url, entersReaderIfAvailable: true)
+            if #available(iOS 10.0, *) {
+                web.preferredBarTintColor = DSConfig.barTintColor
+                web.preferredControlTintColor = UIColor.white
+                if #available(iOS 11.0, *) {
+                    web.dismissButtonStyle = .close
+                } else {
+                    // Fallback on earlier versions
+                }
+            } else {
+                // Fallback on earlier versions
             }
+            navigationController?.present(web, animated: true, completion: nil)
         }
     }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,17 +20,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="102" height="97"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-rt-IKz">
-                        <rect key="frame" x="6" y="76.5" width="90" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国内功能很强大且图标内容很丰富的矢量" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-rt-IKz">
+                        <rect key="frame" x="11" y="76" width="80" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="14.5" id="oTc-Yq-nee"/>
+                            <constraint firstAttribute="width" constant="80" id="g7w-zc-oUK"/>
+                            <constraint firstAttribute="height" constant="15" id="oTc-Yq-nee"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wna-cE-jlh">
-                        <rect key="frame" x="25" y="12" width="52.5" height="52.5"/>
+                        <rect key="frame" x="25" y="12" width="52" height="52"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Wna-cE-jlh" secondAttribute="height" multiplier="7:7" id="8xB-tu-nk5"/>
                         </constraints>
@@ -42,14 +43,14 @@
                 <constraint firstItem="Wna-cE-jlh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="FAr-jZ-edd"/>
                 <constraint firstItem="Wna-cE-jlh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="U34-mg-0mj"/>
                 <constraint firstAttribute="bottom" secondItem="N9U-rt-IKz" secondAttribute="bottom" constant="6" id="YeM-9s-IlH"/>
-                <constraint firstItem="N9U-rt-IKz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="cwn-g6-MXm"/>
                 <constraint firstItem="N9U-rt-IKz" firstAttribute="top" secondItem="Wna-cE-jlh" secondAttribute="bottom" constant="12" id="hTX-qZ-Cb0"/>
-                <constraint firstAttribute="trailing" secondItem="N9U-rt-IKz" secondAttribute="trailing" constant="6" id="naA-9f-Lf8"/>
+                <constraint firstItem="N9U-rt-IKz" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qUF-fN-BgJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="102" height="97"/>
             <connections>
                 <outlet property="imageIV" destination="Wna-cE-jlh" id="1l3-cY-9Al"/>
+                <outlet property="titleHeight" destination="oTc-Yq-nee" id="pCy-BS-KIk"/>
                 <outlet property="titleLB" destination="N9U-rt-IKz" id="KvP-16-O2T"/>
             </connections>
             <point key="canvasLocation" x="60" y="77.5"/>

@@ -27,6 +27,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
         
+        DSKT.getAll91_KDSModelSucess { (obj) in
+            
+            guard let array:[[String:Any]] = obj as? [[String : Any]] else {
+                return
+            }
+//                                print(obj)
+
+              let c = array.last
+            
+            DSKT.getOneProvinceAllKDSModel(withUrl: c!["provinceUrl"] as! String, sucess: { (pobj) in
+                
+                guard let parray:[[String:Any]] = pobj as? [[String : Any]] else {
+                    return
+                }
+                print(pobj)
+
+                let p = parray.first
+
+                DSKT.getOneChannelKDSModel(withUrl: p!["provinceUrl"] as! String, sucess: { (cobj) in
+                    
+//                    print(cobj)
+                })
+
+
+            })
+        }
+        
         
         return true
     }
