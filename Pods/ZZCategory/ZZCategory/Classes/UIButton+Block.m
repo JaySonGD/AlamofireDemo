@@ -6,20 +6,20 @@
 //  Copyright © 2018年 Jay. All rights reserved.
 //
 
-#import "UIControl+Block.h"
+#import "UIButton+Block.h"
 #import <objc/runtime.h>
 
 
-typedef void(^ButtonEventsBlock)(UIControl *);
+typedef void(^ButtonEventsBlock)(UIButton *);
 
-@interface UIControl ()
+@interface UIButton ()
 
 /** 事件回调的block */
 @property (nonatomic, copy) ButtonEventsBlock buttonEventsBlock;
 
 @end
 
-@implementation UIControl (Block)
+@implementation UIButton (Block)
 
 //------- 添加属性 -------//
 
@@ -39,13 +39,13 @@ static void *buttonEventsBlockKey = &buttonEventsBlockKey;
  @param block 回调的block
  @param controlEvents 回调block的事件
  */
-- (void)clickEventHandler:(void (^)(UIControl *))block forControlEvents:(UIControlEvents)controlEvents {
+- (void)clickEventHandler:(void (^)(UIButton *))block forControlEvents:(UIControlEvents)controlEvents {
     self.buttonEventsBlock = block;
     [self addTarget:self action:@selector(blcokButtonClicked:) forControlEvents:controlEvents];
 }
 
 // 按钮点击
-- (void)blcokButtonClicked:(UIControl *)button {
+- (void)blcokButtonClicked:(UIButton *)button {
     !self.buttonEventsBlock ?: self.buttonEventsBlock(button);
 }
 

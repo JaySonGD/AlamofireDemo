@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIControl (Block)
-- (void)clickEventHandler:(void(^)(UIControl *))block forControlEvents:(UIControlEvents)controlEvents;
+@interface UIButton (Block)
+- (void)clickEventHandler:(void(^)(UIButton *))block forControlEvents:(UIControlEvents)controlEvents;
 
 @end
