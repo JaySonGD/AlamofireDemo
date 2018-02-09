@@ -195,10 +195,10 @@ extension DSPlayViewController{
 ////
 //            scale =  height/webView.height
 //
-            //widthConstraint?.deactivate()
+            widthConstraint?.deactivate()
             webView.snp.makeConstraints({ (make) in
 
-                //widthConstraint = make.width.equalTo(playView.snp.height).multipliedBy(width/height).constraint
+                widthConstraint = make.width.equalTo(playView.snp.height).multipliedBy(width/height).constraint
             })
 //
 //            let javaScript = "document.getElementById(\"myVideo\").height=\"\(Int(100))\";document.getElementById(\"myVideo\").width=\"\(Int(100))\""
@@ -238,7 +238,7 @@ extension DSPlayViewController{
 
         playView.addSubview(webView)
         webView.snp.makeConstraints { (make) -> Void in
-            make.bottom.top.equalTo(playView).constraint
+            make.bottom.top.equalTo(playView)
             make.center.equalTo(playView)
             widthConstraint = make.width.equalTo(playView.snp.height).multipliedBy(16/9.0).constraint
         }
@@ -246,16 +246,8 @@ extension DSPlayViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: changButton)
 
         webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        //DSAppDelegate.allowRotation = true
-        
-        //UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        //NotificationCenter.default.addObserver(self, selector: #selector(DSPlayViewController.onDeviceOrientationChange:), name: nsn, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(DSPlayViewController.onDeviceOrientationChange:), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-//    func onDeviceOrientationChange(noti:Notification)  {
-//
-//    }
     
     func changePlay(url:String) {
         
@@ -270,7 +262,7 @@ extension DSPlayViewController{
 
 //            let html = "<html><body style=\"margin:0;background-color:#000000;\" ><video style=\"margin:0;background-color:#000000;\" width=\"100%\" controls autoplay playsinline webkit-playsinline  type=\"application/vnd.apple.mpegurl\"><source src=\"\(m3u8)\">当前环境不支持播放</video></body></html>"
             //width:100%;height:100%;object-fit:cover;
-            let html = "<html><body style=\"margin:0;background-color:#000000;width:100%;position:relative;padding-bottom:0%;height: 0;\" ><video style=\"margin:0;background-color:#000000;position: absolute;top:0; left: 0;width: 100%;height: 100%  \"   controls autoplay playsinline webkit-playsinline  type=\"application/vnd.apple.mpegurl\"><source src=\"\(m3u8)\" id=\"myVideo\">当前环境不支持播放</video></body></html>"
+            let html = "<html><body style=\"margin:0;background-color:#000000;width:100%;position:relative;padding-bottom:56.25%;height: 0;\" ><video style=\"margin:0;background-color:#FFFFFF;position: absolute;top:0; left: 0;width: 100%;height: 100%  \"   controls autoplay playsinline webkit-playsinline  type=\"application/vnd.apple.mpegurl\"><source src=\"\(m3u8)\" id=\"myVideo\">当前环境不支持播放</video></body></html>"
 
 //width: 100%;  width=\"100%\"
 //           let js = "<html><body style=\"margin:0;background-color:#000000;\" ><video src=\"\(m3u8)\" height=\"100%\" autoplay=\"autoplay\" controls=\"controls\" x5-playsinline=\"\" playsinline=\"\" webkit-playsinline=\"true\" style=\" background-color:rgb(1,1,1);height:100%;margin:0;\" id=\"myVideo\"></video></body></html>"
