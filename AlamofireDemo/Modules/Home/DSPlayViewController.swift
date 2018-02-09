@@ -18,7 +18,7 @@ class DSPlayViewController: SecondSmallController {
     
     var curIndex = 0
     
-    var scale : CGFloat = 0.0
+//    var scale : CGFloat = 0.0
     
     
     
@@ -40,11 +40,11 @@ class DSPlayViewController: SecondSmallController {
         web.scrollView.showsVerticalScrollIndicator = false
         web.scrollView.showsHorizontalScrollIndicator = false
         
-//        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(sender:)))
-//        doubleTap.numberOfTapsRequired = 2
-//        doubleTap.delegate = self
-//        doubleTap.cancelsTouchesInView = true
-//        web.scrollView.addGestureRecognizer(doubleTap)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(sender:)))
+        doubleTap.numberOfTapsRequired = 3
+        doubleTap.delegate = self
+        doubleTap.cancelsTouchesInView = true
+        web.scrollView.addGestureRecognizer(doubleTap)
 
         
         return web
@@ -213,8 +213,6 @@ extension DSPlayViewController{
 
             print(webView.scrollView.contentSize)
 
-//            webView.scrollView.contentSize = webView.size
-
         }
     }
     
@@ -226,15 +224,7 @@ extension DSPlayViewController{
 
 extension DSPlayViewController{
     fileprivate func setUI(){
-//        self.automaticallyAdjustsScrollViewInsets = false
         
-//        view.addSubview(playContentView)
-//        playContentView.snp.makeConstraints { (make) -> Void in
-//            make.right.left.equalTo(view)
-//            make.top.equalTo(view).offset(NavbarHeight)
-//            make.height.equalTo(9 * kScreenWidth / 16.0)
-//        }
-
         playView.addSubview(webView)
         webView.snp.makeConstraints { (make) -> Void in
             make.bottom.top.equalTo(playView)

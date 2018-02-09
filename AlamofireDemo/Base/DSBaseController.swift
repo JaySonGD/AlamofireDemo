@@ -15,7 +15,7 @@ enum DSTypeMethod: String {
     case present    = "Present"
 }
 
-
+@objcMembers
 class DSBaseController: UIViewController {
 
     
@@ -61,7 +61,7 @@ class DSBaseController: UIViewController {
         
     }
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
+        print("\(key)----\(value)")
     }
 }
 
@@ -91,6 +91,8 @@ extension DSBaseController{
     
     func openURL(str:String?,type:DSTypeMethod = .push) {
         guard  (str != nil) else {return}
+        
+        
         guard let url = URL(string: str!) else {return}
         
         if  (url.scheme == "app") {
