@@ -177,7 +177,7 @@ extension DSMovieViewModel{
     func loadHomeData(success:@escaping ()->(),
                       failure:@escaping (_ error:String)->()) {
         
-        DSHttpManager.share.request(url: "http://169.254.81.183/index.json",
+        DSHttpManager.share.request(url: "http://192.168.1.140/index.json",
                                     parameters: ["c":"movie","a":"home","debug":9],
                                     success: {[weak self] (obj) in
                                         

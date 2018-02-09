@@ -16,35 +16,21 @@ class DSTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         setViewControllers()
     }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        print("Tabbar - WillAppear",view.frame)
+//        // 因为 presented 完成后，控制器的view的frame会错乱，需要每次将要展现的时候强制设置一下
+//        view.frame = UIScreen.main.bounds
+//    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override var prefersStatusBarHidden: Bool{
-        
-        return (selectedViewController?.childViewControllers.last?.prefersStatusBarHidden) ?? false
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return (selectedViewController?.childViewControllers.last?.preferredStatusBarStyle) ?? .lightContent
-    }
-    
-//    override var shouldAutorotate: Bool{
-//        return (selectedViewController?.childViewControllers.last?.shouldAutorotate) ?? false
-//    }
-//    
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-//        
-//        return (selectedViewController?.childViewControllers.last?.supportedInterfaceOrientations) ?? .portrait
-//    }
-//    
-//    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
-//        return (selectedViewController?.childViewControllers.last?.preferredInterfaceOrientationForPresentation) ?? .portrait
-//    }
 
-    
-    
+}
+
+extension DSTabBarController{
     /// 设置tabBar盛放的视图控制器
     func setViewControllers() -> Void {
         
@@ -56,7 +42,7 @@ class DSTabBarController: UITabBarController {
         
     }
     
-
+    
     func setChildControllers(viewController:UIViewController,
                              title:String,
                              image:String,
@@ -70,15 +56,33 @@ class DSTabBarController: UITabBarController {
         
         addChildViewController(NavVC)
     }
+
+}
+
+extension DSTabBarController{
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return selectedViewController?.preferredStatusBarStyle ?? .default
+    }
     
+    override var prefersStatusBarHidden: Bool {
+        return selectedViewController?.prefersStatusBarHidden ?? false
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return selectedViewController?.preferredStatusBarUpdateAnimation ?? .none
+    }
+    
+    override var shouldAutorotate: Bool {
+        return selectedViewController?.shouldAutorotate ?? true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return selectedViewController?.supportedInterfaceOrientations ?? .portrait
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return selectedViewController?.preferredInterfaceOrientationForPresentation ?? .portrait
+    }
+
 }

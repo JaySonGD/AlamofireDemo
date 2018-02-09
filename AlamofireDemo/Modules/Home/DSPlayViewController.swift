@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import WebKit
 
-class DSPlayViewController: DSBaseController {
+class DSPlayViewController: SecondSmallController {
     
     
     lazy var viewModel = DSMovieViewModel()
@@ -32,14 +32,14 @@ class DSPlayViewController: DSBaseController {
         web.scrollView.backgroundColor = UIColor.black
         web.scrollView.isScrollEnabled = false
         
-        web.navigationDelegate = self
+        //web.navigationDelegate = self
         
         
         return web
     }()
 
     
-    lazy var playView : UIView = {
+    lazy var playContentView : UIView = {
         let playView = UIView(frame: CGRect.zero)
         playView.backgroundColor = UIColor.black
         
@@ -60,7 +60,7 @@ class DSPlayViewController: DSBaseController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUI()
+        //setUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,8 +74,8 @@ class DSPlayViewController: DSBaseController {
 
     
     deinit {
-        DSAppDelegate.allowRotation = false
-        webView.scrollView.removeObserver(self, forKeyPath: "contentSize")
+        //DSAppDelegate.allowRotation = false
+        //webView.scrollView.removeObserver(self, forKeyPath: "contentSize")
     }
 
 }
@@ -160,9 +160,9 @@ extension DSPlayViewController{
 extension DSPlayViewController{
     fileprivate func setUI(){
         self.automaticallyAdjustsScrollViewInsets = false
-        view.addSubview(playView)
-        playView.snp.makeConstraints { (make) -> Void in
-            make.right.left.top.equalTo(view)
+        view.addSubview(playContentView)
+        playContentView.snp.makeConstraints { (make) -> Void in
+            make.right.left.equalTo(view)
             make.top.equalTo(view).offset(NavbarHeight)
             make.height.equalTo(9 * kScreenWidth / 16.0)
         }
@@ -175,7 +175,15 @@ extension DSPlayViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: changButton)
 
         webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        DSAppDelegate.allowRotation = true
+        //DSAppDelegate.allowRotation = true
+        
+        //UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        //NotificationCenter.default.addObserver(self, selector: #selector(DSPlayViewController.onDeviceOrientationChange:), name: nsn, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(DSPlayViewController.onDeviceOrientationChange:), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    func onDeviceOrientationChange(noti:Notification)  {
+        
     }
     
     func changePlay(url:String) {

@@ -60,14 +60,29 @@ class DSBaseController: UIViewController {
         // Dispose of any resources that can be recreated.
         
     }
-    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key)
+    }
+}
+
+extension DSBaseController{
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return  .lightContent
     }
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
     
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
     }
 }
 

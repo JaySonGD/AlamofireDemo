@@ -33,6 +33,13 @@
 		69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */; };
 		69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69996C1720245F2A00BE5F67 /* DSHomeCell.swift */; };
 		69996C1A20245F2A00BE5F67 /* DSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69996C1820245F2A00BE5F67 /* DSHomeCell.xib */; };
+		69DF29A9202D2F3B00E0D4BD /* SecondEnterFullScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A2202D2F3A00E0D4BD /* SecondEnterFullScreenTransition.swift */; };
+		69DF29AA202D2F3B00E0D4BD /* SecondExitFillScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A3202D2F3A00E0D4BD /* SecondExitFillScreenTransition.swift */; };
+		69DF29AB202D2F3B00E0D4BD /* SecondFullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A4202D2F3A00E0D4BD /* SecondFullScreenController.swift */; };
+		69DF29AC202D2F3B00E0D4BD /* SecondLandscapeLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A5202D2F3A00E0D4BD /* SecondLandscapeLeftController.swift */; };
+		69DF29AD202D2F3B00E0D4BD /* SecondLandscapeRightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A6202D2F3A00E0D4BD /* SecondLandscapeRightController.swift */; };
+		69DF29AE202D2F3B00E0D4BD /* SecondPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A7202D2F3A00E0D4BD /* SecondPlayView.swift */; };
+		69DF29AF202D2F3B00E0D4BD /* SecondSmallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A8202D2F3A00E0D4BD /* SecondSmallController.swift */; };
 		69F3C3D0202996A1002FA24B /* DSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3CF202996A1002FA24B /* DSPlayer.swift */; };
 		69F3C3D52029A3EA002FA24B /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */; };
 		69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D62029AE53002FA24B /* DSCollectController.swift */; };
@@ -113,6 +120,13 @@
 		69996BFA2023133900BE5F67 /* DSMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMovieViewModel.swift; sourceTree = "<group>"; };
 		69996C1720245F2A00BE5F67 /* DSHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeCell.swift; sourceTree = "<group>"; };
 		69996C1820245F2A00BE5F67 /* DSHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHomeCell.xib; sourceTree = "<group>"; };
+		69DF29A2202D2F3A00E0D4BD /* SecondEnterFullScreenTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondEnterFullScreenTransition.swift; sourceTree = "<group>"; };
+		69DF29A3202D2F3A00E0D4BD /* SecondExitFillScreenTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondExitFillScreenTransition.swift; sourceTree = "<group>"; };
+		69DF29A4202D2F3A00E0D4BD /* SecondFullScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFullScreenController.swift; sourceTree = "<group>"; };
+		69DF29A5202D2F3A00E0D4BD /* SecondLandscapeLeftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLandscapeLeftController.swift; sourceTree = "<group>"; };
+		69DF29A6202D2F3A00E0D4BD /* SecondLandscapeRightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLandscapeRightController.swift; sourceTree = "<group>"; };
+		69DF29A7202D2F3A00E0D4BD /* SecondPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPlayView.swift; sourceTree = "<group>"; };
+		69DF29A8202D2F3A00E0D4BD /* SecondSmallController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSmallController.swift; sourceTree = "<group>"; };
 		69F3C3CF202996A1002FA24B /* DSPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPlayer.swift; sourceTree = "<group>"; };
 		69F3C3D32029A3EA002FA24B /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
 		69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
@@ -257,6 +271,7 @@
 		69996BEA2022B59D00BE5F67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				69DF29A1202D2F3A00E0D4BD /* Player */,
 				69F3C3E5202BEB4E002FA24B /* DSKT.h */,
 				69F3C3E4202BEB4E002FA24B /* DSKT.m */,
 				69F3C3E2202BEAEA002FA24B /* DSHTML.h */,
@@ -364,6 +379,20 @@
 				ABB5B5BC2026F6FE00430C7B /* DSCategoryCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		69DF29A1202D2F3A00E0D4BD /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				69DF29A2202D2F3A00E0D4BD /* SecondEnterFullScreenTransition.swift */,
+				69DF29A3202D2F3A00E0D4BD /* SecondExitFillScreenTransition.swift */,
+				69DF29A4202D2F3A00E0D4BD /* SecondFullScreenController.swift */,
+				69DF29A5202D2F3A00E0D4BD /* SecondLandscapeLeftController.swift */,
+				69DF29A6202D2F3A00E0D4BD /* SecondLandscapeRightController.swift */,
+				69DF29A7202D2F3A00E0D4BD /* SecondPlayView.swift */,
+				69DF29A8202D2F3A00E0D4BD /* SecondSmallController.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		797A5E57F8E5A945CEA32F54 /* Frameworks */ = {
@@ -610,6 +639,7 @@
 			files = (
 				AB3683062026AFD7003408D7 /* DSActModel.swift in Sources */,
 				AB3683012026AFD7003408D7 /* DSAlertModel.swift in Sources */,
+				69DF29AC202D2F3B00E0D4BD /* SecondLandscapeLeftController.swift in Sources */,
 				AB3683022026AFD7003408D7 /* DSAdmobModel.swift in Sources */,
 				AB3683052026AFD7003408D7 /* DSKdsModel.swift in Sources */,
 				69F3C3DB202AF503002FA24B /* DSRouter.swift in Sources */,
@@ -619,6 +649,7 @@
 				69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */,
 				69F3C3E6202BEB4F002FA24B /* DSKT.m in Sources */,
 				69996BDF20206BC300BE5F67 /* DSPlayViewController.swift in Sources */,
+				69DF29AE202D2F3B00E0D4BD /* SecondPlayView.swift in Sources */,
 				69306A9D202463B900BDFAC8 /* UIView+String.swift in Sources */,
 				69996BD32020365B00BE5F67 /* UIView+Extension.swift in Sources */,
 				69F3C3ED202BFDF5002FA24B /* DSKDSController.swift in Sources */,
@@ -632,13 +663,16 @@
 				AB3683082026AFD7003408D7 /* DSListModel.swift in Sources */,
 				69996BD7202044E900BE5F67 /* DSConfig.swift in Sources */,
 				69F3C3E0202BDE27002FA24B /* DSWebController.swift in Sources */,
+				69DF29AB202D2F3B00E0D4BD /* SecondFullScreenController.swift in Sources */,
 				69F3C3E9202BFCFF002FA24B /* DS91KDSModel.swift in Sources */,
 				69996BCF2020204300BE5F67 /* DSTabBarController.swift in Sources */,
 				AB3683042026AFD7003408D7 /* DSBannerModel.swift in Sources */,
+				69DF29AF202D2F3B00E0D4BD /* SecondSmallController.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
 				69F3C3EF202C23D3002FA24B /* DSWKController.swift in Sources */,
 				69F3C3D9202AEFC9002FA24B /* String+UIViewController.swift in Sources */,
 				69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */,
+				69DF29A9202D2F3B00E0D4BD /* SecondEnterFullScreenTransition.swift in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
 				ABB5B5C12026FF5C00430C7B /* DSPlayerController.swift in Sources */,
@@ -646,8 +680,10 @@
 				69F3C3D52029A3EA002FA24B /* NSObject+Extension.m in Sources */,
 				69996BF02022B9D200BE5F67 /* DSHomeController.swift in Sources */,
 				69996BF82022E68B00BE5F67 /* DSButton.swift in Sources */,
+				69DF29AA202D2F3B00E0D4BD /* SecondExitFillScreenTransition.swift in Sources */,
 				69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */,
 				69F3C3E3202BEAEA002FA24B /* DSHTML.m in Sources */,
+				69DF29AD202D2F3B00E0D4BD /* SecondLandscapeRightController.swift in Sources */,
 				69F3C3EB202BFD6E002FA24B /* DS91PlayModel.swift in Sources */,
 				69996B9820200BEC00BE5F67 /* AppDelegate.swift in Sources */,
 			);

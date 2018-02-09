@@ -16,25 +16,11 @@ class DSNavigationController: UINavigationController {
         setnavigationBar()
     }
 
-//    override var prefersStatusBarHidden: Bool{
-//        return (viewControllers.last?.prefersStatusBarHidden)!
-//    }
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return  .lightContent
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 因为 presented 完成后，控制器的view的frame会错乱，需要每次将要展现的时候强制设置一下(只需在最外层的controller中设置即可)
+        view.frame = UIScreen.main.bounds
     }
-//
-//    override var shouldAutorotate: Bool{
-//        return (viewControllers.last?.shouldAutorotate)!
-//    }
-//    
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-//        return (viewControllers.last?.supportedInterfaceOrientations)!
-//    }
-//    
-//    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
-//        return (viewControllers.last?.preferredInterfaceOrientationForPresentation)!
-//    }
-    
 
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +57,35 @@ class DSNavigationController: UINavigationController {
         return super.popViewController(animated: animated)
     }
 
+}
+
+
+extension DSNavigationController{
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return topViewController?.preferredStatusBarStyle ?? .default
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        
+        return topViewController?.prefersStatusBarHidden ?? false
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return topViewController?.preferredStatusBarUpdateAnimation ?? .none
+    }
+    
+    override var shouldAutorotate: Bool {
+        return topViewController?.shouldAutorotate ?? true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return topViewController?.supportedInterfaceOrientations ?? .portrait
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return topViewController?.preferredInterfaceOrientationForPresentation ?? .portrait
+    }
 }
 
 extension DSNavigationController{

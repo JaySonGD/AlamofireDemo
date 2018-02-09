@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     var window: UIWindow?
-    var allowRotation = false
+    //var allowRotation = false
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -36,14 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-extension AppDelegate{
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        if (allowRotation) {
-            return .all;
+//extension AppDelegate{
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        if (allowRotation) {
+//            return .all;
+//
+//        }else {
+//            return .portrait;
+//        }
+//
+//    }
+//}
 
-        }else {
-            return .portrait;
-        }
-
-    }
-}
