@@ -106,8 +106,8 @@ extension DSKDSController: UICollectionViewDataSource,UICollectionViewDelegate{
                                success: { [weak self](model) in
                                 self?.view.hideLoading("")
                                 let vc = DSPlayViewController()
-                                //vc.model = model
-                                //vc.title = cmodel.province
+                                vc.model = model
+                                vc.title = cmodel.province
                                 self?.navigationController?.pushViewController(vc, animated: true)
 
             })

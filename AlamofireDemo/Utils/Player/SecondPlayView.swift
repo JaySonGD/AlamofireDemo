@@ -25,8 +25,9 @@ class SecondPlayView: UIView {
     
     
     lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "bg"))
+        let imageView = UIImageView()//UIImageView(image: #imageLiteral(resourceName: "bg"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = UIColor.black
         return imageView
     }()
     

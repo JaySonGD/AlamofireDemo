@@ -138,7 +138,7 @@ extension SecondSmallController{
 //        navigationController?.popViewController(animated: true)
 //    }
     
-    @objc private func tapGesture(sender: UITapGestureRecognizer) {
+    @objc  func tapGesture(sender: UITapGestureRecognizer) {
         
         switch playView.state {
         case .small:

@@ -13,7 +13,7 @@ class SecondFullScreenController: UIViewController {
     var playView: SecondPlayView?
     
     override var prefersStatusBarHidden: Bool {
-        return false
+        return true
     }
     
     override var shouldAutorotate: Bool {
