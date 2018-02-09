@@ -166,7 +166,7 @@ extension DSPlayViewController{
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         
-        
+        return
         guard let obj: UIScrollView = object as? UIScrollView else {
             return
         }
@@ -195,11 +195,10 @@ extension DSPlayViewController{
 ////
 //            scale =  height/webView.height
 //
-            widthConstraint?.deactivate()
-            webView.snp.makeConstraints({ (make) in
-
-                widthConstraint = make.width.equalTo(playView.snp.height).multipliedBy(width/height).constraint
-            })
+            //widthConstraint?.deactivate()
+            //webView.snp.makeConstraints({ (make) in
+                //widthConstraint = make.width.equalTo(playView.snp.height).multipliedBy(width/height).constraint
+            //})
 //
 //            let javaScript = "document.getElementById(\"myVideo\").height=\"\(Int(100))\";document.getElementById(\"myVideo\").width=\"\(Int(100))\""
 //            webView.evaluateJavaScript(javaScript, completionHandler: { (obj, error) in
@@ -240,7 +239,7 @@ extension DSPlayViewController{
         webView.snp.makeConstraints { (make) -> Void in
             make.bottom.top.equalTo(playView)
             make.center.equalTo(playView)
-            widthConstraint = make.width.equalTo(playView.snp.height).multipliedBy(16/9.0).constraint
+            widthConstraint = make.width.equalTo(webView.snp.height).multipliedBy(16/9.0).constraint
         }
         changePlay(url: (model?.allURLs.first)!)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: changButton)
@@ -257,12 +256,12 @@ extension DSPlayViewController{
 //            let request = URLRequest(url: URL(string: m3u8)!)
 //            let request = URLRequest(url: URL(string: m3u8)!), cachePolicy, timeoutInterval: 10)
 //            self?.webView.load(request)
-            var m3u8 = "http://acm.gg/inews.m3u8"
+//            var m3u8 = "http://acm.gg/inews.m3u8"
             
 
 //            let html = "<html><body style=\"margin:0;background-color:#000000;\" ><video style=\"margin:0;background-color:#000000;\" width=\"100%\" controls autoplay playsinline webkit-playsinline  type=\"application/vnd.apple.mpegurl\"><source src=\"\(m3u8)\">当前环境不支持播放</video></body></html>"
             //width:100%;height:100%;object-fit:cover;
-            let html = "<html><body style=\"margin:0;background-color:#000000;width:100%;position:relative;padding-bottom:56.25%;height: 0;\" ><video style=\"margin:0;background-color:#FFFFFF;position: absolute;top:0; left: 0;width: 100%;height: 100%  \"   controls autoplay playsinline webkit-playsinline  type=\"application/vnd.apple.mpegurl\"><source src=\"\(m3u8)\" id=\"myVideo\">当前环境不支持播放</video></body></html>"
+            let html = "<html><body style=\"margin:0;background-color:#000000;width:100%;position:relative;padding-bottom:56.25%;height: 0;\" ><video style=\"margin:0;background-color:#000000;position: absolute;top:0; left: 0;width: 100%;height: 100%  \"   controls autoplay playsinline webkit-playsinline  type=\"application/vnd.apple.mpegurl\"><source src=\"\(m3u8)\" id=\"myVideo\">当前环境不支持播放</video></body></html>"
 
 //width: 100%;  width=\"100%\"
 //           let js = "<html><body style=\"margin:0;background-color:#000000;\" ><video src=\"\(m3u8)\" height=\"100%\" autoplay=\"autoplay\" controls=\"controls\" x5-playsinline=\"\" playsinline=\"\" webkit-playsinline=\"true\" style=\" background-color:rgb(1,1,1);height:100%;margin:0;\" id=\"myVideo\"></video></body></html>"
