@@ -51,6 +51,8 @@ class DSPlayerController: DSBaseController {
         let btn = UIButton(type: UIButtonType.custom)
         btn.setImage(#imageLiteral(resourceName: "clloect"), for: .normal)
         btn.setImage(#imageLiteral(resourceName: "clloect_select"), for: .selected)
+        btn.backgroundColor = UIColor.random
+        btn.size = CGSize(width: 44, height: 44)
         btn.clickEventHandler({[weak self] (sender:UIButton?) in
             
             guard (self?.model != nil) else {
@@ -125,8 +127,12 @@ class DSPlayerController: DSBaseController {
 
         if sender.isSelected {
           bgIV.layer.pauseAnimate()
+          DSPlayer.share.play()
+
         }else{
           bgIV.layer.resumeAnimate()
+            DSPlayer.share.pause()
+
         }
     }
     
@@ -139,6 +145,8 @@ extension DSPlayerController{
     private func setUI(){
         let bar = UIToolbar(frame: UIScreen.main.bounds)
         bar.barStyle = .black
+        bar.alpha = 0.9
+
         bgIV.addSubview(bar)
         navigationItem.rightBarButtonItem =  UIBarButtonItem(customView: collectBtn)
         

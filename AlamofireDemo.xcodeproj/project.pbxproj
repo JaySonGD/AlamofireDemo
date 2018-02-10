@@ -40,6 +40,10 @@
 		69DF29AD202D2F3B00E0D4BD /* SecondLandscapeRightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A6202D2F3A00E0D4BD /* SecondLandscapeRightController.swift */; };
 		69DF29AE202D2F3B00E0D4BD /* SecondPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A7202D2F3A00E0D4BD /* SecondPlayView.swift */; };
 		69DF29AF202D2F3B00E0D4BD /* SecondSmallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29A8202D2F3A00E0D4BD /* SecondSmallController.swift */; };
+		69DF29B2202E7D8400E0D4BD /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29B1202E7D8300E0D4BD /* GTMBase64.m */; };
+		69DF29B5202E840600E0D4BD /* DSHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29B4202E840600E0D4BD /* DSHistoryController.swift */; };
+		69DF29B8202E9DEC00E0D4BD /* DSAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF29B6202E9DEC00E0D4BD /* DSAdViewController.swift */; };
+		69DF29B9202E9DEC00E0D4BD /* DSAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69DF29B7202E9DEC00E0D4BD /* DSAdViewController.xib */; };
 		69F3C3D0202996A1002FA24B /* DSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3CF202996A1002FA24B /* DSPlayer.swift */; };
 		69F3C3D52029A3EA002FA24B /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */; };
 		69F3C3D72029AE53002FA24B /* DSCollectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3C3D62029AE53002FA24B /* DSCollectController.swift */; };
@@ -127,6 +131,12 @@
 		69DF29A6202D2F3A00E0D4BD /* SecondLandscapeRightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLandscapeRightController.swift; sourceTree = "<group>"; };
 		69DF29A7202D2F3A00E0D4BD /* SecondPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPlayView.swift; sourceTree = "<group>"; };
 		69DF29A8202D2F3A00E0D4BD /* SecondSmallController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSmallController.swift; sourceTree = "<group>"; };
+		69DF29B0202E7D8300E0D4BD /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		69DF29B1202E7D8300E0D4BD /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		69DF29B3202E7EA900E0D4BD /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		69DF29B4202E840600E0D4BD /* DSHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHistoryController.swift; sourceTree = "<group>"; };
+		69DF29B6202E9DEC00E0D4BD /* DSAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAdViewController.swift; sourceTree = "<group>"; };
+		69DF29B7202E9DEC00E0D4BD /* DSAdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSAdViewController.xib; sourceTree = "<group>"; };
 		69F3C3CF202996A1002FA24B /* DSPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPlayer.swift; sourceTree = "<group>"; };
 		69F3C3D32029A3EA002FA24B /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
 		69F3C3D42029A3EA002FA24B /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
@@ -276,6 +286,9 @@
 				69F3C3E4202BEB4E002FA24B /* DSKT.m */,
 				69F3C3E2202BEAEA002FA24B /* DSHTML.h */,
 				69F3C3E1202BEAEA002FA24B /* DSHTML.m */,
+				69DF29B3202E7EA900E0D4BD /* GTMDefines.h */,
+				69DF29B0202E7D8300E0D4BD /* GTMBase64.h */,
+				69DF29B1202E7D8300E0D4BD /* GTMBase64.m */,
 				69F3C3CF202996A1002FA24B /* DSPlayer.swift */,
 				69996BD82020460B00BE5F67 /* DSConst.swift */,
 				69996BDC2020585E00BE5F67 /* DSHttpManager.swift */,
@@ -331,6 +344,9 @@
 				69996BF62022E66200BE5F67 /* View */,
 				69996BF42022BC9A00BE5F67 /* DSProfileController.swift */,
 				69F3C3D62029AE53002FA24B /* DSCollectController.swift */,
+				69DF29B4202E840600E0D4BD /* DSHistoryController.swift */,
+				69DF29B6202E9DEC00E0D4BD /* DSAdViewController.swift */,
+				69DF29B7202E9DEC00E0D4BD /* DSAdViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -532,6 +548,7 @@
 				ABB5B5C22026FF5C00430C7B /* DSPlayerController.xib in Resources */,
 				69996C1A20245F2A00BE5F67 /* DSHomeCell.xib in Resources */,
 				ABB5B5BE2026F6FE00430C7B /* DSCategoryCell.xib in Resources */,
+				69DF29B9202E9DEC00E0D4BD /* DSAdViewController.xib in Resources */,
 				69996B9D20200BEC00BE5F67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,6 +661,7 @@
 				AB3683052026AFD7003408D7 /* DSKdsModel.swift in Sources */,
 				69F3C3DB202AF503002FA24B /* DSRouter.swift in Sources */,
 				69996BCB20201FE700BE5F67 /* DSBaseController.swift in Sources */,
+				69DF29B5202E840600E0D4BD /* DSHistoryController.swift in Sources */,
 				ABB5B5BA2026ECEF00430C7B /* DSCategoryModel.swift in Sources */,
 				69996BFB2023133900BE5F67 /* DSMovieViewModel.swift in Sources */,
 				69996BF52022BC9A00BE5F67 /* DSProfileController.swift in Sources */,
@@ -670,10 +688,12 @@
 				69DF29AF202D2F3B00E0D4BD /* SecondSmallController.swift in Sources */,
 				69996BD92020460B00BE5F67 /* DSConst.swift in Sources */,
 				69F3C3EF202C23D3002FA24B /* DSWKController.swift in Sources */,
+				69DF29B8202E9DEC00E0D4BD /* DSAdViewController.swift in Sources */,
 				69F3C3D9202AEFC9002FA24B /* String+UIViewController.swift in Sources */,
 				69996C1920245F2A00BE5F67 /* DSHomeCell.swift in Sources */,
 				69DF29A9202D2F3B00E0D4BD /* SecondEnterFullScreenTransition.swift in Sources */,
 				69996BDD2020585E00BE5F67 /* DSHttpManager.swift in Sources */,
+				69DF29B2202E7D8400E0D4BD /* GTMBase64.m in Sources */,
 				69996BD52020404100BE5F67 /* UIFont+Extension.swift in Sources */,
 				ABB5B5C12026FF5C00430C7B /* DSPlayerController.swift in Sources */,
 				ABB5B5BD2026F6FE00430C7B /* DSCategoryCell.swift in Sources */,

@@ -1,19 +1,19 @@
 //
-//  DSCollectController.swift
+//  DSHistoryController.swift
 //  AlamofireDemo
 //
-//  Created by Jay on 2018/2/6.
+//  Created by Jay on 2018/2/10.
 //  Copyright © 2018年 Jay. All rights reserved.
 //
 
 import UIKit
 import LYEmptyView
 
-class DSCollectController: DSBaseController {
+class DSHistoryController: DSBaseController {
 
     lazy var viewModel: DSMovieViewModel = {
         let vm = DSMovieViewModel()
-        vm.loadCollectModes()
+        vm.loadCollectModes(isCollected: false)
         return vm
     }()
     
@@ -29,64 +29,64 @@ class DSCollectController: DSBaseController {
         let nib = UINib(nibName: DSHomeCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DSHomeCell.className)
         tableView.backgroundColor = DSConfig.viewBackgroundColor
-
-        let emptyView = LYEmptyView.emptyActionView(withImageStr: "back", titleStr: "暫無更多數據", detailStr: "", btnTitleStr: "我要收藏", btnClick: {[weak self] in
+        
+        let emptyView = LYEmptyView.emptyActionView(withImageStr: "back", titleStr: "暫無更多數據", detailStr: "", btnTitleStr: "我要觀看", btnClick: {[weak self] in
             self?.navigationController?.popToRootViewController(animated:true)
         })
-
+        
         tableView.ly_emptyView = emptyView
         emptyView?.actionBtnBackGroundColor = DSConfig.barTintColor;
         emptyView?.actionBtnTitleColor = UIColor.white;
         tableView.ly_emptyView.isHidden = true
-
+        
         return tableView
     }()
-
+    
     // MARK: - <生命周期>
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUI()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
 
-
 // MARK: - <自定义方法>
-extension DSCollectController{
+extension DSHistoryController{
     func setUI()  {
         
-        navigationItem.title = "收藏"
+        navigationItem.title = "浏覽曆史"
         view.addSubview(tableView)
-//        noMoreDataImage = "back"
-//        noMoreDataTitle = "暂无更多数据"
-//        noMoreDataActionTitle = "我要收藏"
-//        noMoreDataAction = {[weak self] in
-//            self?.navigationController?.popToRootViewController(animated:true)
-//        }
-//        initTableView(dataSource: self,
-//                      delegate: self,
-//                      rowHeight: 130,
-//                      cellClass: DSHomeCell.self)
+        //        noMoreDataImage = "back"
+        //        noMoreDataTitle = "暂无更多数据"
+        //        noMoreDataActionTitle = "我要收藏"
+        //        noMoreDataAction = {[weak self] in
+        //            self?.navigationController?.popToRootViewController(animated:true)
+        //        }
+        //        initTableView(dataSource: self,
+        //                      delegate: self,
+        //                      rowHeight: 130,
+        //                      cellClass: DSHomeCell.self)
     }
     
 }
 
-extension DSCollectController : UITableViewDelegate,UITableViewDataSource{
+extension DSHistoryController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.collectModels?.count ?? 0
+        return viewModel.historyModels?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DSHomeCell.className) as! DSHomeCell
         //cell.backgroundColor = UIColor.random
-        cell.model = viewModel.collectModels?[indexPath.row]
+        cell.model = viewModel.historyModels?[indexPath.row]
         return cell
     }
     
@@ -94,4 +94,5 @@ extension DSCollectController : UITableViewDelegate,UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
 

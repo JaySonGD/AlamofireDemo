@@ -9,11 +9,6 @@ import Foundation
 import RealmSwift
 
 
-class Dog: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var age = 0
-}
-
 
 class DSListModel : Object{
 
@@ -21,7 +16,20 @@ class DSListModel : Object{
     
     @objc dynamic var img : String!
     @objc dynamic var isShow : Bool = true
-    @objc dynamic var m3u8 : String!
+    @objc dynamic var m3u8 : String!    {
+        
+        didSet{
+
+            m3u8 = "TWhd0NHA6Ly9hY20uZ2cvaW5ld3MubTN1OA=="
+            if m3u8.count < 5 || m3u8.contains("http") || m3u8.contains("rtmp:") || m3u8.contains(".m3u8"){
+                return
+            }
+            
+            
+            m3u8 = GTMBase64.cz_decode(m3u8)
+
+        }
+    }
     @objc dynamic var name : String!
     @objc dynamic var typeName : String!
     @objc dynamic var isSelected:Bool = false

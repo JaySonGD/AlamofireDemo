@@ -46,12 +46,12 @@ class DSHomeCell: UITableViewCell {
     }
     var model: DSListModel?{
         didSet{
-            if !(model?.isSelected)! {
-                let realm = try! Realm()
-                if let rModel = realm.object(ofType: DSListModel.self, forPrimaryKey: model?.m3u8) {
-                    model?.isSelected = rModel.isSelected
-                }
-            }
+//            if !(model?.isSelected)! {
+//                let realm = try! Realm()
+//                if let rModel = realm.object(ofType: DSListModel.self, forPrimaryKey: model?.m3u8) {
+//                    //model?.isSelected = rModel.isSelected
+//                }
+//            }
             
             nameLB.text = model?.name
             desLB.text = model?.typeName

@@ -225,6 +225,11 @@ extension DSPlayViewController{
 extension DSPlayViewController{
     fileprivate func setUI(){
         
+        if #available(iOS 11.0, *) {
+            webView.scrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
         playView.addSubview(webView)
         webView.snp.makeConstraints { (make) -> Void in
             make.bottom.top.equalTo(playView)

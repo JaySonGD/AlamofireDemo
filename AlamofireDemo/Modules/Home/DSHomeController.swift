@@ -83,8 +83,8 @@ class DSHomeController: DSBaseController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
-        //tableView.y = NavbarHeight
-        //tableView.height = kScreenHeight - NavbarHeight - SafeAreaBottomHeight
+        tableView.y = NavbarHeight
+        tableView.height = kScreenHeight - NavbarHeight //- SafeAreaBottomHeight
         tableView.tableHeaderView = headerView
         tableView.dataSource = self
         tableView.delegate = self
@@ -93,6 +93,10 @@ class DSHomeController: DSBaseController {
         let nib = UINib(nibName: DSHomeCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DSHomeCell.className)
         tableView.backgroundColor = DSConfig.viewBackgroundColor
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, SafeAreaBottomHeight, 0)
+        tableView.scrollIndicatorInsets = tableView.contentInset
+//        tableView.separatorInset = UIEdgeInsetsMake(0, 0, SafeAreaBottomHeight, 0)
+
         
         let emptyView = LYEmptyView.emptyActionView(withImageStr: "back", titleStr: "暂无更多数据", detailStr: "", btnTitleStr: "重新加载", btnClick: {[weak self] in
             self?.loadHomeData()
@@ -101,7 +105,7 @@ class DSHomeController: DSBaseController {
         tableView.ly_emptyView = emptyView
         emptyView?.actionBtnBackGroundColor = DSConfig.barTintColor;
         emptyView?.actionBtnTitleColor = UIColor.white;
-        tableView.ly_emptyView.isHidden = true
+        //tableView.ly_emptyView.isHidden = true
 
         return tableView
     }()
@@ -118,7 +122,8 @@ class DSHomeController: DSBaseController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        tableView.height = kScreenHeight - NavbarHeight
+        //tableView.height = kScreenHeight - NavbarHeight
+        tableView.y = 0
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -207,12 +212,12 @@ extension DSHomeController{
             self?.tableView.reloadData()
             self?.view.hideLoading("载入成功")
             self?.tableView.ly_endLoading()
-            (homeModel?.list.count != 0) ? () : (self?.tableView.ly_emptyView.isHidden = false)
+            //(homeModel?.list.count != 0) ? () : (self?.tableView.ly_emptyView.isHidden = false)
 
         }) {[weak self] (msg) in
             self?.view.hideLoading(msg)
             self?.tableView.ly_emptyView.titleStr = msg
-            self?.tableView.ly_emptyView.isHidden = false
+            //self?.tableView.ly_emptyView.isHidden = false
         }
     }
 }
@@ -230,6 +235,12 @@ extension DSHomeController{
 // MARK: - <自定义方法>
 extension DSHomeController{
     private func setUI() {
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
+
         navigationItem.leftBarButtonItem = profileItem
         navigationItem.title = "港澳通"
         view.backgroundColor = DSConfig.viewBackgroundColor

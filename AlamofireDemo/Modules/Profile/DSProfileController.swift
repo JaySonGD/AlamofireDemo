@@ -7,25 +7,27 @@
 //
 
 import UIKit
+import MessageUI
+
 
 class DSProfileController: DSBaseController {
     
-    let kHeadViewHeight : CGFloat = 300
+    let kHeadViewHeight : CGFloat = 250 + StatusBarHeight
     
     lazy var datas: [[[String:Any]]] = {
         
         let array = [
             [
                 ["title":"我的","image":#imageLiteral(resourceName: "clloect_select")],
-                ["title":"我的","image":#imageLiteral(resourceName: "clloect_select")],
+                ["title":"Clean Cache","image":#imageLiteral(resourceName: "clloect_select")],
             ],
             [
-                ["title":"我的","image":#imageLiteral(resourceName: "clloect_select")],
-                ["title":"我的","image":#imageLiteral(resourceName: "clloect_select")],
+                ["title":"Leave Review","image":#imageLiteral(resourceName: "clloect_select")],
+                ["title":"Share App","image":#imageLiteral(resourceName: "clloect_select")],
             ],
             [
-                ["title":"我的","image":#imageLiteral(resourceName: "clloect_select")],
-                ["title":"我的","image":#imageLiteral(resourceName: "clloect_select")],
+                ["title":"Contact Us","image":#imageLiteral(resourceName: "clloect_select")],
+                ["title":"About Advertisements","image":#imageLiteral(resourceName: "clloect_select")],
                 ],
             ]
         
@@ -53,7 +55,10 @@ class DSProfileController: DSBaseController {
         
         let historyBtn = DSButton(type: UIButtonType.custom)
         historyBtn.setImage(#imageLiteral(resourceName: "history"), for: .normal)
-        historyBtn.setTitle("历史", for: .normal)
+        historyBtn.setTitle("曆史", for: .normal)
+        historyBtn.clickEventHandler({[weak self] (sender) in
+            self?.navigationController?.pushViewController(DSHistoryController(), animated: true)
+        }, for: .touchUpInside)
         view.addSubview(historyBtn)
         
 
@@ -93,7 +98,7 @@ class DSProfileController: DSBaseController {
         let version = infoDict!["CFBundleShortVersionString"] as! String
         let bulid = infoDict!["CFBundleVersion"] as! String
         label.height = 84
-        label.text = "版本号：\(version) (BULID \(bulid))"
+        label.text = "版本號：\(version) (BULID \(bulid))"
         label.textColor = UIColor.lightGray
         label.textAlignment = .center
         return label
@@ -181,6 +186,23 @@ extension DSProfileController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section == 0 {
+            
+        }else if section == 1{
+            
+        }else{
+            if row == 0 {
+                sendMail()
+
+            }else{
+                present(DSAdViewController(), animated: true, completion: nil)
+            }
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -195,6 +217,13 @@ extension DSProfileController:UITableViewDataSource,UITableViewDelegate{
     }
 }
 
+extension DSProfileController:MFMailComposeViewControllerDelegate{
+     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?)
+    {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
 extension DSProfileController{
     @objc private func clloectClick(btn:UIButton){
         navigationController?.pushViewController(DSCollectController(), animated: true)
@@ -206,19 +235,20 @@ extension DSProfileController{
         
         view.backgroundColor = DSConfig.viewBackgroundColor
         view.addSubview(tableView)
-//        initTableView(dataSource: self,
-//                      delegate: self,
-//                      rowHeight: 54,
-//                      formNiB: false,
-//                      separatorStyle: .singleLine,
-//                      showsVerticalScrollIndicator: false,
-//                      cellClass: UITableViewCell.self)
-//
-//        tableView.y = -NavbarHeight
-//        tableView.height = kScreenHeight + NavbarHeight
-//        tableView.tableHeaderView = headView
-//        tableView.tableFooterView = footerLabel
-
         
+    }
+    
+    func sendMail()  {
+        if !MFMailComposeViewController.canSendMail() {
+            return
+        }
+        let mailVc = MFMailComposeViewController()
+        mailVc.setSubject("Contact from 港劇資訊")
+        //mailVc.setMessageBody("下午3点半，召开部门会议，请准时参加。", isHTML: false)
+        mailVc.setToRecipients(["hktv@163.com"])
+        //mailVc.setCcRecipients(["caljcbios@163.com"])
+        mailVc.mailComposeDelegate = self
+        present(mailVc, animated: true, completion: nil)
+
     }
 }
